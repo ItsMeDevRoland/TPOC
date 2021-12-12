@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2layout>
+    <name>HowDoYouPlay</name>
+    <sid>351097525270069</sid>
+    <event-sheet>EmperorsTombSpawn</event-sheet>
+    <size>
+        <width>1708</width>
+        <height>960</height>
+    </size>
+    <margins>
+        <horizontal>500</horizontal>
+        <vertical>500</vertical>
+    </margins>
+    <unbounded-scrolling>0</unbounded-scrolling>
+    <layers>
+        <layer name="Layer 0" sid="694921443002207">
+            <initially-visible>1</initially-visible>
+            <background-color>255,255,255</background-color>
+            <transparent>0</transparent>
+            <parallax>
+                <x>1</x>
+                <y>1</y>
+            </parallax>
+            <zoom-rate>1</zoom-rate>
+            <opacity>1</opacity>
+            <force-own-texture>0</force-own-texture>
+            <global>0</global>
+            <use-render-cells>0</use-render-cells>
+            <blend-mode>0</blend-mode>
+            <effect-fallback>0</effect-fallback>
+            <instances>
+                <instance type="List" uid="471">
+                    <properties>
+                        <items>How To Play;======; First Before Playing Make Sure YOU DONT PUNCH THE ROCK;=========; Gather Trees? But Ran Out, Well Plant Them By Clicking ESC;========; Working With Something But Got Hungry? Why Not Craft It, Its Just 10-15 grass;=======; Nighttime But Dont Want to Being Kicked By The Anomallies, Then Why Not Use Torch;=========; Running Out of Pigs? Then Why Not Stand Beside them, They Are Easy to Catch Anyways;=======; Dont Know How to Fill Your Water Bar? Then Go to A Blue Tile, Then Press Space; =========; Want to Work With Someone, Were About to Release A Multiplayer Or A Splitscreen;==============; Want To Build Stuff? Then Click B For Building And E For Inventory;=============; If I Were You, Start Smashing Your Keyboard When Playing This Game, Since The Control Isn&apos;t Documented Yet &lt;3- By Casey;================; </items>
+                        <tooltip></tooltip>
+                        <initial-visibility>Visible</initial-visibility>
+                        <enabled>Yes</enabled>
+                        <type>List box</type>
+                        <multi-select>No</multi-select>
+                        <auto-font-size>Yes</auto-font-size>
+                        <id-optional></id-optional>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>23</x>
+                        <y>27</y>
+                        <z>0</z>
+                        <width>811</width>
+                        <height>427</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                    </world>
+                </instance>
+            </instances>
+            <effects />
+        </layer>
+    </layers>
+    <nonworld-instances />
+    <effects />
+</c2layout>
