@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>PlayerHealthSystem</name>
+    <events>
+        <event-group description="" sid="535619725667077" title="HealthBarUpdater" />
+        <event-block sid="992152529881828">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="912245471094555" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="983065338566535" type="HealthQuantity">
+                    <param id="0" name="Text">FirstPlayer.PlayerHealth</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-group description="" sid="687806087690579" title="SystemHurtCode" />
+        <event-block sid="904845943880371">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="264506201364876" type="FirstPlayer">
+                    <param id="0" name="Instance variable">PlayerHealth</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">99</param>
+                </condition>
+                <condition id="-7" name="Compare instance variable" sid="645094417696246" type="FirstPlayer">
+                    <param id="0" name="Instance variable">PlayerHealth</param>
+                    <param id="1" name="Comparison">5</param>
+                    <param id="2" name="Value">51</param>
+                </condition>
+                <condition id="-6" name="Every X seconds" sid="617512015589453" type="System">
+                    <param id="0" name="Interval (seconds)">2</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-16" name="Set opacity" sid="902984280025139" type="Sprite">
+                    <param id="0" name="Opacity">25</param>
+                </action>
+                <action id="-15" name="Set visible" sid="442755798655310" type="Sprite">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-16" name="Wait" sid="301281115175025" type="System">
+                    <param id="0" name="Seconds">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="178929693092807" type="Sprite">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="953322727665123">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="127503573633219" type="FirstPlayer">
+                    <param id="0" name="Instance variable">PlayerHealth</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">50</param>
+                </condition>
+                <condition id="-7" name="Compare instance variable" sid="685285075974797" type="FirstPlayer">
+                    <param id="0" name="Instance variable">PlayerHealth</param>
+                    <param id="1" name="Comparison">5</param>
+                    <param id="2" name="Value">26</param>
+                </condition>
+                <condition id="-6" name="Every X seconds" sid="507612372025402" type="System">
+                    <param id="0" name="Interval (seconds)">2</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-16" name="Set opacity" sid="458959594383159" type="Sprite">
+                    <param id="0" name="Opacity">50</param>
+                </action>
+                <action id="-15" name="Set visible" sid="354485564197637" type="Sprite">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-16" name="Wait" sid="246264079378575" type="System">
+                    <param id="0" name="Seconds">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="927087824065108" type="Sprite">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="898494571325768">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="256807093767428" type="FirstPlayer">
+                    <param id="0" name="Instance variable">PlayerHealth</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">25</param>
+                </condition>
+                <condition id="-7" name="Compare instance variable" sid="554178468578257" type="FirstPlayer">
+                    <param id="0" name="Instance variable">PlayerHealth</param>
+                    <param id="1" name="Comparison">5</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+                <condition id="-6" name="Every X seconds" sid="453471582822491" type="System">
+                    <param id="0" name="Interval (seconds)">2</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-16" name="Set opacity" sid="228264663696443" type="Sprite">
+                    <param id="0" name="Opacity">100</param>
+                </action>
+                <action id="-15" name="Set visible" sid="347642016608332" type="Sprite">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-16" name="Wait" sid="488482630881911" type="System">
+                    <param id="0" name="Seconds">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="558018960011217" type="Sprite">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Tree Event</name>
+    <events>
+        <variable constant="0" name="BreakingWoodPoint" sid="462014915735715" static="0" type="number">5</variable>
+        <event-group description="" sid="470235432862634" title="BreakingCode" />
+        <event-block sid="266057392587369">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="600501943654656" type="BuildSizeLv1">
+                    <param id="0" name="Object">Tree2</param>
+                </condition>
+                <condition id="2" name="Key is down" sid="498105641714360" type="Keyboard">
+                    <param id="0" name="Key">32</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="653580353276762" type="Tree2">
+                    <param id="0" name="Animation">&quot;Hurt&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action id="-12" name="Subtract from" sid="851427729477653" type="Tree2">
+                    <param id="0" name="Instance variable">TreeLife</param>
+                    <param id="1" name="Value">BreakingWoodPoint</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="936914723482763">
+            <conditions>
+                <condition id="-22" name="Else" sid="814640507995912" type="System" />
+                <condition id="-14" name="Compare variable" sid="164668348284341" type="System">
+                    <param id="0" name="Variable">BreakingWoodPoint</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">30</param>
+                </condition>
+                <condition id="1" name="Is overlapping another object" sid="608860983868792" type="BuildSizeLv1">
+                    <param id="0" name="Object">Tree2</param>
+                </condition>
+                <condition id="2" name="Key is down" sid="416183327824588" type="Keyboard">
+                    <param id="0" name="Key">32</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="351852144399964" type="Tree2">
+                    <param id="0" name="Animation">&quot;Hurt&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action id="-12" name="Subtract from" sid="936210368240786" type="Tree2">
+                    <param id="0" name="Instance variable">TreeLife</param>
+                    <param id="1" name="Value">BreakingWoodPoint</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-group description="" sid="242852702043580" title="WhenHit0" />
+        <event-block sid="668921987921805">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="941122395370659" type="Tree2">
+                    <param id="0" name="Instance variable">TreeLife</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-1" name="Every tick" sid="958225384055207" type="System" />
+            </conditions>
+            <actions>
+                <action id="-10" name="Add to" sid="877478247939690" type="System">
+                    <param id="0" name="Variable">Wood</param>
+                    <param id="1" name="Value">5</param>
+                </action>
+                <action id="-9" name="Destroy" sid="651829698266401" type="Tree2" />
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

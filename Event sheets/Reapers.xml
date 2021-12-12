@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Reapers</name>
+    <events>
+        <variable constant="0" name="DontTouchMePlayer" sid="579492445602243" static="0" type="number">0</variable>
+        <event-group description="" sid="670650209040930" title="ReaperStartWorkingKillingSlime" />
+        <event-block sid="812458932482352">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="912600271164106" type="System">
+                    <param id="0" name="Interval (seconds)">2</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="180249647462984" type="System">
+                    <param id="0" name="Variable">DontTouchMePlayer</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Pathfinding" id="0" name="Find path" sid="634705981897810" type="Reaper">
+                    <param id="0" name="X">RedSlime.X</param>
+                    <param id="1" name="Y">RedSlime.Y</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="412780872284489">
+            <conditions>
+                <condition behavior="Pathfinding" id="0" name="On path found" sid="299370818243291" type="Reaper" />
+            </conditions>
+            <actions>
+                <action behavior="Pathfinding" id="1" name="Move along path" sid="489348022665008" type="Reaper" />
+            </actions>
+        </event-block>
+        <event-group description="" sid="949256174908100" title="DO NOT BOOP ME" />
+        <event-block sid="527855639210497">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="548583512055630" type="Reaper">
+                    <param id="0" name="Object">FirstPlayer</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="632282578841743" type="System">
+                    <param id="0" name="Variable">DontTouchMePlayer</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Pathfinding" id="0" name="Find path" sid="904260505351290" type="Reaper">
+                    <param id="0" name="X">FirstPlayer.X</param>
+                    <param id="1" name="Y">FirstPlayer.Y</param>
+                </action>
+                <action id="-9" name="Set value" sid="528016461514557" type="System">
+                    <param id="0" name="Variable">DontTouchMePlayer</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="391209664722768">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="168937026528713" type="System">
+                    <param id="0" name="Variable">DontTouchMePlayer</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+                <condition id="-6" name="Every X seconds" sid="509071999659384" type="System">
+                    <param id="0" name="Interval (seconds)">2</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Pathfinding" id="0" name="Find path" sid="525601764051779" type="Reaper">
+                    <param id="0" name="X">FirstPlayer.X</param>
+                    <param id="1" name="Y">FirstPlayer.Y</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-group description="" sid="963512606872567" title="HurtCalculator" />
+        <event-block sid="517721395119817">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="620157233657068" type="Reaper">
+                    <param id="0" name="Object">FirstPlayer</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="367981682375795" type="System">
+                    <param id="0" name="Variable">DontTouchMePlayer</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-12" name="Subtract from" sid="891403757551821" type="FirstPlayer">
+                    <param id="0" name="Instance variable">PlayerHealth</param>
+                    <param id="1" name="Value">10</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="637872576014006">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="213147294679470" type="Reaper">
+                    <param id="0" name="Object">RedSlime</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-12" name="Subtract from" sid="775252375405120" type="RedSlime">
+                    <param id="0" name="Instance variable">RedSlimeHealth</param>
+                    <param id="1" name="Value">20</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-group description="" sid="309020196823265" title="TimerForForgetting" />
+        <event-block sid="931838337923660">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="178773314681401" type="System">
+                    <param id="0" name="Variable">DontTouchMePlayer</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+                <condition id="-1" name="Every tick" sid="483234276482824" type="System" />
+            </conditions>
+            <actions>
+                <action id="-16" name="Wait" sid="106661948514025" type="System">
+                    <param id="0" name="Seconds">10</param>
+                </action>
+                <action id="-9" name="Set value" sid="219847652093934" type="System">
+                    <param id="0" name="Variable">DontTouchMePlayer</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

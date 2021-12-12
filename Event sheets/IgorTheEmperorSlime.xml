@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>IgorTheEmperorSlime</name>
+    <events>
+        <event-block sid="124577439334617">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="327402070050943" type="EmperorSlimesVision">
+                    <param id="0" name="Object">FirstPlayer</param>
+                </condition>
+                <condition id="-6" name="Every X seconds" sid="926523108370193" type="System">
+                    <param id="0" name="Interval (seconds)">10</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Spawn another object" sid="756195149635152" type="IgorTheEmperorRedSlime">
+                    <param id="0" name="Object">IgorsMinion</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="218139131835765">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="522967929692866" type="EmperorSlimesVision">
+                    <param id="0" name="Object">FirstPlayer</param>
+                </condition>
+                <condition id="-6" name="Every X seconds" sid="850698392684625" type="System">
+                    <param id="0" name="Interval (seconds)">2</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Pathfinding" id="0" name="Find path" sid="647385658595937" type="IgorTheEmperorRedSlime">
+                    <param id="0" name="X">FirstPlayer.X</param>
+                    <param id="1" name="Y">FirstPlayer.Y</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="955188327267337">
+            <conditions>
+                <condition behavior="Pathfinding" id="0" name="On path found" sid="851700609738152" type="IgorTheEmperorRedSlime" />
+            </conditions>
+            <actions>
+                <action behavior="Pathfinding" id="1" name="Move along path" sid="155312140720503" type="IgorTheEmperorRedSlime" />
+            </actions>
+        </event-block>
+        <event-block sid="912327198307555">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="297231889075594" type="IgorTheEmperorRedSlime">
+                    <param id="0" name="Object">FirstPlayer</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-12" name="Subtract from" sid="638652936651108" type="FirstPlayer">
+                    <param id="0" name="Instance variable">PlayerHealth</param>
+                    <param id="1" name="Value">50</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="261364563454851">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="363710473151903" type="System">
+                    <param id="0" name="Interval (seconds)">2</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Spawn another object" sid="219648966784922" type="IgorTheEmperorRedSlime">
+                    <param id="0" name="Object">IgorsMinion</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

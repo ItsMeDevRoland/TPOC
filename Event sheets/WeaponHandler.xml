@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>WeaponHandler</name>
+    <events>
+        <event-group description="" sid="396615420458033" title="CheckingIfWeaponBroke" />
+        <event-block sid="479971723151733">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="230924608719794" type="System">
+                    <param id="0" name="Variable">SwordLife</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-1" name="Every tick" sid="861203898262369" type="System" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="304810989857521" type="System">
+                    <param id="0" name="Variable">WeaponDamage</param>
+                    <param id="1" name="Value">5</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="332771018194758">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="261701586865171" type="System">
+                    <param id="0" name="Variable">PickaxeLife</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-1" name="Every tick" sid="596929566637436" type="System" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="498027002221982" type="System">
+                    <param id="0" name="Variable">StoneBreaking</param>
+                    <param id="1" name="Value">5</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="538546629370910">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="278166839851801" type="System">
+                    <param id="0" name="Variable">AxeLife</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-1" name="Every tick" sid="485208191543862" type="System" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="383971585541874" type="System">
+                    <param id="0" name="Variable">BreakingWoodPoint</param>
+                    <param id="1" name="Value">5</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

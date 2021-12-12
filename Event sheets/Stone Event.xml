@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Stone Event</name>
+    <events>
+        <variable constant="0" name="StoneBreaking" sid="789232025999302" static="0" type="number">1</variable>
+        <event-group description="" sid="101510238985127" title="BreakingCodeStone" />
+        <event-block sid="649082801360455">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="763647561917663" type="BuildSizeLv1">
+                    <param id="0" name="Object">Rock2</param>
+                </condition>
+                <condition id="2" name="Key is down" sid="541286818861222" type="Keyboard">
+                    <param id="0" name="Key">32</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="122829750861007" type="System">
+                    <param id="0" name="Variable">StoneBreaking</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-12" name="Subtract from" sid="382184577873131" type="FirstPlayer">
+                    <param id="0" name="Instance variable">PlayerHealth</param>
+                    <param id="1" name="Value">5</param>
+                </action>
+                <action id="-12" name="Subtract from" sid="235152288397473" type="Rock2">
+                    <param id="0" name="Instance variable">StoneHealth</param>
+                    <param id="1" name="Value">StoneBreaking</param>
+                </action>
+                <action id="4" name="Set animation" sid="383368000421597" type="Rock2">
+                    <param id="0" name="Animation">&quot;Animation&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="805198024859949">
+            <conditions>
+                <condition id="-22" name="Else" sid="168337244574664" type="System" />
+                <condition id="1" name="Is overlapping another object" sid="178276304699161" type="BuildSizeLv1">
+                    <param id="0" name="Object">Rock2</param>
+                </condition>
+                <condition id="2" name="Key is down" sid="820601995870435" type="Keyboard">
+                    <param id="0" name="Key">32</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="156198497794574" type="Rock2">
+                    <param id="0" name="Animation">&quot;Animation&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action id="-12" name="Subtract from" sid="452394952580992" type="Rock2">
+                    <param id="0" name="Instance variable">StoneHealth</param>
+                    <param id="1" name="Value">StoneBreaking</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="867629605292926">
+            <conditions>
+                <condition id="-22" name="Else" sid="621121205321834" type="System" />
+                <condition id="-14" name="Compare variable" sid="784434148187206" type="System">
+                    <param id="0" name="Variable">StoneBreaking</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">30</param>
+                </condition>
+                <condition id="1" name="Is overlapping another object" sid="120940911666436" type="BuildSizeLv1">
+                    <param id="0" name="Object">Rock2</param>
+                </condition>
+                <condition id="2" name="Key is down" sid="287354788018137" type="Keyboard">
+                    <param id="0" name="Key">32</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="656577440594647" type="Rock2">
+                    <param id="0" name="Animation">&quot;Animation&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action id="-12" name="Subtract from" sid="163765638067294" type="Rock2">
+                    <param id="0" name="Instance variable">StoneHealth</param>
+                    <param id="1" name="Value">StoneBreaking</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-group description="" sid="841568725835512" title="RockDiedHandler" />
+        <event-block sid="217521489964308">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="756757141451049" type="Rock2">
+                    <param id="0" name="Instance variable">StoneHealth</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-1" name="Every tick" sid="580856961949072" type="System" />
+            </conditions>
+            <actions>
+                <action id="-10" name="Add to" sid="577234702001661" type="System">
+                    <param id="0" name="Variable">Stone</param>
+                    <param id="1" name="Value">2</param>
+                </action>
+                <action id="-9" name="Destroy" sid="978013491853519" type="Rock2" />
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>MainMenuSheet</name>
+    <events>
+        <event-block sid="712255062695932">
+            <conditions>
+                <condition id="0" name="On clicked" sid="570106296836495" type="Play" />
+                <condition id="-32" inverted="1" name="Is on platform" sid="390737376713152" type="System">
+                    <param id="0" name="Platform">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="8" name="Show save dialog" sid="990577344589570" type="NWjs">
+                    <param id="0" name="Accept">&quot;.json&quot;</param>
+                </action>
+                <action id="0" name="Write file" sid="630812030237649" type="NWjs">
+                    <param id="0" name="Path">NWjs.AppFolder</param>
+                    <param id="1" name="Contents">&quot;Game Created&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="192791684355467">
+            <conditions>
+                <condition id="0" name="On clicked" sid="617144838486589" type="Play" />
+                <condition id="-32" name="Is on platform" sid="715491459858707" type="System">
+                    <param id="0" name="Platform">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="670320913975426" type="System">
+                    <param id="0" name="Layout">StartOfCreation</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="843407561674194">
+            <conditions>
+                <condition id="4" name="On save dialog OK" sid="326108132817354" type="NWjs" />
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="868192651135503" type="System">
+                    <param id="0" name="Layout">StartOfCreation</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="451817637186120">
+            <conditions>
+                <condition id="0" name="On clicked" sid="619042114367166" type="LoadGame" />
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="348839898173410" type="System">
+                    <param id="0" name="Layout">LoadArea</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="420712636880157">
+            <conditions>
+                <condition id="6" name="On object clicked" sid="636396510692903" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">0</param>
+                    <param id="2" name="Object clicked">CogWheel</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="138258869105357" type="System">
+                    <param id="0" name="Layout">Setting</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="435893122827805">
+            <conditions>
+                <condition id="0" name="On clicked" sid="224642151068290" type="Button2" />
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="421067273947417" type="System">
+                    <param id="0" name="Layout">HowDoYouPlay</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Saving System</name>
+    <events>
+        <variable constant="0" name="StartSavingOnHTMLServer" sid="546996993875698" static="0" type="number">0</variable>
+        <event-block sid="458824909099890">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="420593092913062" type="System">
+                    <param id="0" name="Variable">Hour</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">3</param>
+                </condition>
+                <condition id="-4" name="Trigger once while true" sid="133823548419532" type="System" />
+            </conditions>
+            <actions>
+                <action id="-36" name="Save" sid="519610418927270" type="System">
+                    <param id="0" name="Slot">&quot;Save&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="816998256863855">
+            <conditions>
+                <condition id="-28" name="On save complete" sid="856690284352870" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Set item" sid="564911783831337" type="LocalStorage">
+                    <param id="0" name="Key">&quot;Save&quot;</param>
+                    <param id="1" name="Value">SaveStateJSON</param>
+                </action>
+                <action id="0" name="Write file" sid="313411096583015" type="NWjs">
+                    <param id="0" name="Path">NWjs.ChosenPath</param>
+                    <param id="1" name="Contents">SaveStateJSON</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>DeathScreen</name>
+    <events>
+        <event-block sid="846245314232013">
+            <conditions>
+                <condition id="0" name="On clicked" sid="233212070742511" type="Exit" />
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="199567532440155" type="System">
+                    <param id="0" name="Layout">Menu</param>
+                </action>
+                <action id="-21" name="Reset global variables" sid="285311250643003" type="System" />
+            </actions>
+        </event-block>
+        <event-block sid="680022213648343">
+            <conditions>
+                <condition id="0" name="On clicked" sid="920481520272602" type="PlayAgain" />
+            </conditions>
+            <actions>
+                <action id="-21" name="Reset global variables" sid="456629868779499" type="System" />
+                <action id="-2" name="Go to layout" sid="966081605683548" type="System">
+                    <param id="0" name="Layout">Map 1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="983837842954760">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="879266630546205" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="957278311716393" type="Audio">
+                    <param id="0" name="Audio file">granny_bed_jumpscare_sound_effectmp3converter</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

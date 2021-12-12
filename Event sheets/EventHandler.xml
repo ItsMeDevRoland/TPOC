@@ -1,0 +1,316 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>EventHandler</name>
+    <events>
+        <include>Wandering Salemans</include>
+        <include>WeaponHandler</include>
+        <include>EmperorsTombSpawn</include>
+        <include>IgorPeletMinion</include>
+        <include>IgorMinion</include>
+        <include>MainMenuSheet</include>
+        <include>IgorTheEmperorSlime</include>
+        <include>Reapers</include>
+        <include>Reaper&apos;sTomb</include>
+        <variable constant="0" name="AllowBackupFor5Sec" sid="620337275128963" static="0" type="number">0</variable>
+        <variable constant="0" name="CloseEverySound" sid="957286665466957" static="0" type="number">0</variable>
+        <variable constant="0" name="CloseEveryMusic" sid="750271395418545" static="0" type="number">0</variable>
+        <variable constant="0" name="PickaxeLife" sid="671476726467482" static="0" type="number">0</variable>
+        <variable constant="0" name="AxeLife" sid="519983504120433" static="0" type="number">0</variable>
+        <variable constant="0" name="SwordLife" sid="382065125282641" static="0" type="number">0</variable>
+        <include>DusSkull&apos;sScript</include>
+        <include>Player&apos;s Thirst System</include>
+        <variable constant="0" name="FullscreenActivated" sid="914901619400937" static="0" type="number">0</variable>
+        <variable constant="0" name="MusicActivate" sid="779644141242928" static="0" type="number">0</variable>
+        <include>Corrupted Tree Event</include>
+        <include>Saving System</include>
+        <include>BuildingTable</include>
+        <include>Torch</include>
+        <include>AnomallyHandler</include>
+        <include>DayNightCycle</include>
+        <include>Inventory Detailer LV1</include>
+        <include>Pigs</include>
+        <include>Mud</include>
+        <include>Player&apos;s Hunger System</include>
+        <include>Grass</include>
+        <include>Fighting System</include>
+        <include>RedSlime Nest</include>
+        <include>RedSlime</include>
+        <include>Slime Nest</include>
+        <include>Player&apos;s Dialouge</include>
+        <include>Slime</include>
+        <include>SaplingGrowth</include>
+        <include>CraftingSystemUse</include>
+        <include>PlayerHealthSystem</include>
+        <include>Stone Event</include>
+        <include>Debug</include>
+        <include>BuildingSystem</include>
+        <include>Tree Event</include>
+        <include>InventoryHandler</include>
+        <include>PlayerMoveHandler</include>
+        <event-block sid="111241647243998">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="254292872761374" type="System" />
+            </conditions>
+            <actions>
+                <action id="-3" name="Set position" sid="820173074035759" type="BuildSizeLv1">
+                    <param id="0" name="X">FirstPlayer.X</param>
+                    <param id="1" name="Y">FirstPlayer.Y</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="362922140746774">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="442218428731374" type="System" />
+            </conditions>
+            <actions>
+                <action id="-3" name="Set position" sid="910143481793713" type="MouseHandler">
+                    <param id="0" name="X">Mouse.X</param>
+                    <param id="1" name="Y">Mouse.Y</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="363947105959948">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="792969924329829" type="System" />
+            </conditions>
+            <actions>
+                <action id="-3" name="Set position" sid="595652511652903" type="SlimeView">
+                    <param id="0" name="X">Slime.X</param>
+                    <param id="1" name="Y">Slime.Y</param>
+                </action>
+                <action id="-3" name="Set position" sid="626053670867754" type="RedSlimeView">
+                    <param id="0" name="X">RedSlime.X</param>
+                    <param id="1" name="Y">RedSlime.Y</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="305918311832203">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="552766988292557" type="System" />
+            </conditions>
+            <actions>
+                <action id="-3" name="Set position" sid="401830176412183" type="PlayersCheck">
+                    <param id="0" name="X">FirstPlayer.X</param>
+                    <param id="1" name="Y">FirstPlayer.Y</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="855298198766822">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="102923004027402" type="System">
+                    <param id="0" name="Interval (seconds)">2</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="246463916873761" type="Hearth">
+                    <param id="0" name="Animation">&quot;Default&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="712659102380345">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="620671567323599" type="FirstPlayer">
+                    <param id="0" name="Instance variable">PlayerHealth</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="955098380106224" type="System">
+                    <param id="0" name="Layout">Died</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="397868448140146">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="891394924434701" type="FirstPlayer">
+                    <param id="0" name="Instance variable">HungerBar</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">-1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="141097340648696" type="System">
+                    <param id="0" name="Layout">Died</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="616059770175447">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="452446894926304" type="System">
+                    <param id="0" name="Variable">Hour</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">15</param>
+                </condition>
+                <condition id="-31" inverted="1" name="Object UID exists" sid="871597702504433" type="System">
+                    <param id="0" name="UID">94</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="824290581571634" type="Audio">
+                    <param id="0" name="Audio file">melancholy-sad-piano-music-3802</param>
+                    <param id="2" name="Loop">1</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="847428411232269">
+            <conditions>
+                <condition id="-18" name="On created" sid="362963346710161" type="Anomally" />
+                <condition id="-1" name="Every tick" sid="364976187185593" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="961779420383388" type="Audio">
+                    <param id="0" name="Audio file">scary-ambience_F#_minor</param>
+                    <param id="2" name="Loop">1</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="832597645890944">
+            <conditions>
+                <condition id="-19" name="On destroyed" sid="757853727499333" type="Anomally" />
+            </conditions>
+            <actions>
+                <action id="33" name="Stop all" sid="226252164282758" type="Audio" />
+            </actions>
+        </event-block>
+        <event-block sid="864002129305478">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="448421480311152" type="Keyboard">
+                    <param id="0" name="Key">77</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="966392495316862" type="System">
+                    <param id="0" name="Variable">MusicActivate</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-1" name="Every tick" sid="244513726901316" type="System" />
+            </conditions>
+            <actions>
+                <action id="33" name="Stop all" sid="752952267371057" type="Audio" />
+                <action id="-9" name="Set value" sid="272094738010371" type="System">
+                    <param id="0" name="Variable">MusicActivate</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="915718747215063">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="710651725090844" type="Keyboard">
+                    <param id="0" name="Key">77</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="314485941048224" type="System">
+                    <param id="0" name="Variable">MusicActivate</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+                <condition id="-1" name="Every tick" sid="455353730815048" type="System" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="682776282756681" type="System">
+                    <param id="0" name="Variable">MusicActivate</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="340896254993501">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="248991983598624" type="Keyboard">
+                    <param id="0" name="Key">70</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="449154256397972" type="System">
+                    <param id="0" name="Variable">FullscreenActivated</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="18" name="Supports requesting fullscreen" sid="454274802347941" type="Browser" />
+            </conditions>
+            <actions>
+                <action id="10" name="Request fullscreen" sid="120121867655385" type="Browser">
+                    <param id="0" name="Mode">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="443878723596395" type="System">
+                    <param id="0" name="Variable">FullscreenActivated</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="967342379981621">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="531448997026499" type="Keyboard">
+                    <param id="0" name="Key">70</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="399884198494841" type="System">
+                    <param id="0" name="Variable">FullscreenActivated</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+                <condition id="10" name="Is fullscreen" sid="805237709306610" type="Browser" />
+            </conditions>
+            <actions>
+                <action id="11" name="Cancel fullscreen" sid="713066190250983" type="Browser" />
+                <action id="-9" name="Set value" sid="896933506500413" type="System">
+                    <param id="0" name="Variable">FullscreenActivated</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="218736999563067">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="170935326911879" type="System">
+                    <param id="0" name="Variable">CloseEveryMusic</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+                <condition id="-1" name="Every tick" sid="154102238375299" type="System" />
+            </conditions>
+            <actions>
+                <action id="6" name="Stop" sid="242048813459007" type="Audio">
+                    <param id="0" name="Tag">&quot;&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="146345556653178">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="284716593829251" type="System">
+                    <param id="0" name="Variable">AllowBackupFor5Sec</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+                <condition id="-6" name="Every X seconds" sid="114553891713202" type="System">
+                    <param id="0" name="Interval (seconds)">5</param>
+                </condition>
+                <condition id="-32" inverted="1" name="Is on platform" sid="877764269281589" type="System">
+                    <param id="0" name="Platform">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Write file" sid="112706833427934" type="NWjs">
+                    <param id="0" name="Path">NWjs.AppFolder</param>
+                    <param id="1" name="Contents">SaveStateJSON</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="825872347923113">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="498928924108728" type="System" />
+                <condition id="-14" name="Compare variable" sid="721361936595402" type="System">
+                    <param id="0" name="Variable">EmperorSlimeIsSpawned</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="697834810120432" type="IgorTheEmperorRedSlime" />
+                <action id="-9" name="Destroy" sid="939776188317580" type="IgorsMinion" />
+                <action id="-9" name="Destroy" sid="542758931309541" type="SlimePelets" />
+                <action id="-9" name="Destroy" sid="187571593172861" type="EmperorSlimesVision" />
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

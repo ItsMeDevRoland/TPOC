@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>IgorPeletMinion</name>
+    <events>
+        <event-group description="" sid="941281807136150" title="OnSpawnFindEnemy" />
+        <event-block sid="130185245151969">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="970264702528138" type="System">
+                    <param id="0" name="Interval (seconds)">0.5</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Pathfinding" id="0" name="Find path" sid="341975255266476" type="SlimePelets">
+                    <param id="0" name="X">FirstPlayer.X</param>
+                    <param id="1" name="Y">FirstPlayer.Y</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-group description="" sid="869124634406141" title="OnPlayerFindWalk" />
+        <event-block sid="974248080130091">
+            <conditions>
+                <condition behavior="Pathfinding" id="0" name="On path found" sid="102005072776653" type="SlimePelets" />
+            </conditions>
+            <actions>
+                <action behavior="Pathfinding" id="1" name="Move along path" sid="684527646897886" type="SlimePelets" />
+            </actions>
+        </event-block>
+        <event-group description="" sid="488743591793205" title="OnEnemyTouchPlayer" />
+        <event-block sid="324554345223853">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="392381175430963" type="SlimePelets">
+                    <param id="0" name="Object">FirstPlayer</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-12" name="Subtract from" sid="217795178075918" type="FirstPlayer">
+                    <param id="0" name="Instance variable">PlayerHealth</param>
+                    <param id="1" name="Value">50</param>
+                </action>
+                <action id="-9" name="Destroy" sid="767003268015633" type="SlimePelets" />
+            </actions>
+        </event-block>
+        <event-group description="" sid="845422419190276" title="SlimePeletHealthDamage" />
+        <event-block sid="101123974804734">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="258512557855618" type="SwissBlade">
+                    <param id="0" name="Object">SlimePelets</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-12" name="Subtract from" sid="426839716672201" type="SlimePelets">
+                    <param id="0" name="Instance variable">SlimePeletHealth</param>
+                    <param id="1" name="Value">WeaponDamage</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="298269417261171">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="995527452414209" type="SlimePelets">
+                    <param id="0" name="Instance variable">SlimePeletHealth</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-1" name="Every tick" sid="772965836302914" type="System" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="842680567230515" type="SlimePelets" />
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

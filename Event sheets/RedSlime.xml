@@ -1,0 +1,182 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>RedSlime</name>
+    <events>
+        <event-block sid="513961966992578">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="781344960169447" type="FirstPlayer">
+                    <param id="0" name="Object">RedSlimeView</param>
+                </condition>
+                <condition id="-7" name="Compare instance variable" sid="197160987757272" type="RedSlime">
+                    <param id="0" name="Instance variable">RedSlimeHealth</param>
+                    <param id="1" name="Comparison">5</param>
+                    <param id="2" name="Value">150</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Pathfinding" id="2" name="Stop" sid="409100630633887" type="RedSlime" />
+                <action behavior="Pathfinding" id="0" name="Find path" sid="341876549518229" type="RedSlime">
+                    <param id="0" name="X">FirstPlayer.X</param>
+                    <param id="1" name="Y">FirstPlayer.Y</param>
+                </action>
+                <action id="-9" name="Destroy" sid="459460282247896" type="RedSlimeView" />
+                <action id="-16" name="Wait" sid="609524853922971" type="System">
+                    <param id="0" name="Seconds">1</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="630974316440168" type="RedSlime">
+                    <param id="0" name="Object">RedSlimeView</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="434368195391866">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="994156811133274" type="Slime">
+                    <param id="0" name="Object">RedSlimeView</param>
+                </condition>
+                <condition id="-7" name="Compare instance variable" sid="987326513427945" type="RedSlime">
+                    <param id="0" name="Instance variable">RedSlimeHealth</param>
+                    <param id="1" name="Comparison">5</param>
+                    <param id="2" name="Value">150</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Pathfinding" id="2" name="Stop" sid="741483366066166" type="RedSlime" />
+                <action behavior="Pathfinding" id="0" name="Find path" sid="409550750426723" type="RedSlime">
+                    <param id="0" name="X">Slime.X</param>
+                    <param id="1" name="Y">Slime.Y</param>
+                </action>
+                <action id="-9" name="Destroy" sid="858090478680438" type="RedSlimeView" />
+                <action id="-16" name="Wait" sid="516743477602190" type="System">
+                    <param id="0" name="Seconds">1</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="742906325838777" type="RedSlime">
+                    <param id="0" name="Object">RedSlimeView</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="184556049702278">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="525238580273768" type="RedSlime">
+                    <param id="0" name="Instance variable">RedSlimeHealth</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">149</param>
+                </condition>
+                <condition id="-1" name="Every tick" sid="923887081022087" type="System" />
+            </conditions>
+            <actions>
+                <action behavior="Pathfinding" id="0" name="Find path" sid="985133198939418" type="RedSlime">
+                    <param id="0" name="X">RedSlimeNest.X</param>
+                    <param id="1" name="Y">RedSlimeNest.Y</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="653751608627529">
+            <conditions>
+                <condition behavior="Pathfinding" id="0" name="On path found" sid="921055995480445" type="RedSlime" />
+            </conditions>
+            <actions>
+                <action behavior="Pathfinding" id="1" name="Move along path" sid="223861119723510" type="RedSlime" />
+            </actions>
+        </event-block>
+        <event-block sid="339473470237958">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="924241496151592" type="RedSlime">
+                    <param id="0" name="Object">FirstPlayer</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-12" name="Subtract from" sid="120877559153315" type="FirstPlayer">
+                    <param id="0" name="Instance variable">PlayerHealth</param>
+                    <param id="1" name="Value">30</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="213835825011840">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="130602989175166" type="RedSlime">
+                    <param id="0" name="Object">Slime</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="753546318052212" type="Slime">
+                    <param id="0" name="Animation">&quot;Hurt&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action id="-12" name="Subtract from" sid="343046200871844" type="Slime">
+                    <param id="0" name="Instance variable">SlimeHealth</param>
+                    <param id="1" name="Value">30</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="704418973467447">
+            <conditions>
+                <condition behavior="Pathfinding" id="6" name="Compare speed" sid="205656207371027" type="RedSlime">
+                    <param id="0" name="Comparison">5</param>
+                    <param id="1" name="Speed">1</param>
+                </condition>
+                <condition id="-1" name="Every tick" sid="580028198190662" type="System" />
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="978330835807177" type="RedSlime">
+                    <param id="0" name="Animation">&quot;Default&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="460031713940881">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="677145359064704" type="System">
+                    <param id="0" name="Interval (seconds)">60</param>
+                </condition>
+                <condition behavior="Pathfinding" id="6" name="Compare speed" sid="555321761886795" type="RedSlime">
+                    <param id="0" name="Comparison">3</param>
+                    <param id="1" name="Speed">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="575349152977171" type="RedSlime" />
+            </actions>
+        </event-block>
+        <event-group description="" sid="183395465069440" title="DeathRedSlime" />
+        <event-block sid="814344641920235">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="551777431762966" type="RedSlime">
+                    <param id="0" name="Instance variable">RedSlimeHealth</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-1" name="Every tick" sid="665443368948632" type="System" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="632372775500194" type="RedSlime" />
+                <action id="-9" name="Destroy" sid="518115978401649" type="RedSlimeView" />
+            </actions>
+        </event-block>
+        <event-block sid="617307981088604">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="512873708785562" type="SwissBlade">
+                    <param id="0" name="Object">RedSlime</param>
+                </condition>
+                <condition id="-7" name="Compare instance variable" sid="740923359764598" type="RedSlime">
+                    <param id="0" name="Instance variable">RedSlimeHealth</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-1" name="Every tick" sid="856373174573453" type="System" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="150590383403077" type="RedSlime" />
+                <action id="-9" name="Destroy" sid="188930764402119" type="RedSlimeView" />
+                <action id="-10" name="Add to" sid="668730751904513" type="System">
+                    <param id="0" name="Variable">SlimeEssence</param>
+                    <param id="1" name="Value">3</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

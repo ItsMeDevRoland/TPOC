@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Reaper&apos;sTomb</name>
+    <events>
+        <event-group description="" sid="189631979965930" title="Reaper&apos;sTombSpawnAtAfterNoon" />
+        <event-block sid="234681111677561">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="505426818762824" type="System">
+                    <param id="0" name="Variable">Hour</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">7</param>
+                </condition>
+                <condition id="-6" name="Every X seconds" sid="698400689334789" type="System">
+                    <param id="0" name="Interval (seconds)">15</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Spawn another object" sid="314781293449895" type="ReapersTomb">
+                    <param id="0" name="Object">Reaper</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="232957936936514">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="960680344914189" type="System">
+                    <param id="0" name="Variable">AllowBackupFor5Sec</param>
+                    <param id="1" name="Comparison">5</param>
+                    <param id="2" name="Value">9</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="685334367580155" type="Reaper" />
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

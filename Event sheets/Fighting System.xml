@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Fighting System</name>
+    <events>
+        <variable constant="0" name="WeaponDamage" sid="952086876457043" static="0" type="number">10</variable>
+        <event-group description="" sid="292151625072047" title="SwissEffect" />
+        <event-block sid="562458620678873">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="148765019108624" type="SwissBlade">
+                    <param id="0" name="Object">RedSlime</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-12" name="Subtract from" sid="616050306259498" type="RedSlime">
+                    <param id="0" name="Instance variable">RedSlimeHealth</param>
+                    <param id="1" name="Value">WeaponDamage</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="164376150325046">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="447501655186598" type="SwissBlade">
+                    <param id="0" name="Object">Slime</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-12" name="Subtract from" sid="189922338188460" type="Slime">
+                    <param id="0" name="Instance variable">SlimeHealth</param>
+                    <param id="1" name="Value">WeaponDamage</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="762715294612977">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="218446731879428" type="SwissBlade">
+                    <param id="0" name="Object">Pig</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-12" name="Subtract from" sid="231527643821595" type="Pig">
+                    <param id="0" name="Instance variable">PigHealth</param>
+                    <param id="1" name="Value">WeaponDamage</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="648888598515672">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="634566062373837" type="SwissBlade">
+                    <param id="0" name="Object">IgorsMinion</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="238687721179228" type="IgorsMinion" />
+                <action id="-10" name="Add to" sid="916103568587381" type="System">
+                    <param id="0" name="Variable">SlimeEssence</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-group description="" sid="611347864992463" title="Control" />
+        <event-block sid="608402055441884">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="704418185773569" type="Keyboard">
+                    <param id="0" name="Key">32</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Spawn another object" sid="977738054867656" type="FirstPlayer">
+                    <param id="0" name="Object">SwissBlade</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="Image point">1</param>
+                </action>
+                <action id="-16" name="Wait" sid="234590504566615" type="System">
+                    <param id="0" name="Seconds">1</param>
+                </action>
+                <action id="-9" name="Destroy" sid="729009263295474" type="SwissBlade" />
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Torch</name>
+    <events>
+        <event-block sid="770460359185702">
+            <conditions>
+                <condition id="-18" name="On created" sid="882858073048078" type="Torch2" />
+            </conditions>
+            <actions>
+                <action id="0" name="Spawn another object" sid="939716719501691" type="Torch2">
+                    <param id="0" name="Object">TorchLight</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="282634118228088">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="645240414972665" type="System">
+                    <param id="0" name="Interval (seconds)">5</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-12" name="Subtract from" sid="840186435608314" type="Torch2">
+                    <param id="0" name="Instance variable">TorchBurnHealth</param>
+                    <param id="1" name="Value">5</param>
+                </action>
+                <action id="-12" name="Subtract from" sid="661293627012038" type="TorchLight">
+                    <param id="0" name="Instance variable">LightBlow</param>
+                    <param id="1" name="Value">5</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-group description="" sid="406133703082163" title="DeathOfTorchLol" />
+        <event-block sid="738969962153346">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="484111167468494" type="Torch2">
+                    <param id="0" name="Instance variable">TorchBurnHealth</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-1" name="Every tick" sid="221834541016622" type="System" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="603184082829939" type="Torch2" />
+            </actions>
+        </event-block>
+        <event-block sid="891646647477614">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="957443111301730" type="TorchLight">
+                    <param id="0" name="Instance variable">LightBlow</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-1" name="Every tick" sid="204020822279147" type="System" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="534638134631117" type="TorchLight" />
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

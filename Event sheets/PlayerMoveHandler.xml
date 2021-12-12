@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>PlayerMoveHandler</name>
+    <events>
+        <variable constant="0" name="WalkSpeed" sid="962250227204791" static="0" type="number">5</variable>
+        <event-block sid="161638281250298">
+            <conditions>
+                <condition id="2" name="Key is down" sid="685281067548286" type="Keyboard">
+                    <param id="0" name="Key">87</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="356372561669351" type="FirstPlayer">
+                    <param id="0" name="Animation">&quot;Moving&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action id="-2" name="Set Y" sid="526281278907779" type="FirstPlayer">
+                    <param id="0" name="Y">FirstPlayer.Y - WalkSpeed</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="651300742853874">
+            <conditions>
+                <condition id="2" name="Key is down" sid="664385002147601" type="Keyboard">
+                    <param id="0" name="Key">83</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="484952843315359" type="FirstPlayer">
+                    <param id="0" name="Animation">&quot;Moving&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action id="-2" name="Set Y" sid="241467645851428" type="FirstPlayer">
+                    <param id="0" name="Y">FirstPlayer.Y + WalkSpeed</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="334249250033401">
+            <conditions>
+                <condition id="2" name="Key is down" sid="437174869545434" type="Keyboard">
+                    <param id="0" name="Key">65</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="506941093380243" type="FirstPlayer">
+                    <param id="0" name="Animation">&quot;Moving&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action id="7" name="Set mirrored" sid="496886673363625" type="FirstPlayer">
+                    <param id="0" name="State">0</param>
+                </action>
+                <action id="-1" name="Set X" sid="550102045838168" type="FirstPlayer">
+                    <param id="0" name="X">FirstPlayer.X - WalkSpeed</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="141423190753788">
+            <conditions>
+                <condition id="2" name="Key is down" sid="700135975638809" type="Keyboard">
+                    <param id="0" name="Key">68</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="941722693626512" type="FirstPlayer">
+                    <param id="0" name="Animation">&quot;Moving&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action id="7" name="Set mirrored" sid="260943788879103" type="FirstPlayer">
+                    <param id="0" name="State">1</param>
+                </action>
+                <action id="-1" name="Set X" sid="462070328682723" type="FirstPlayer">
+                    <param id="0" name="X">FirstPlayer.X + WalkSpeed</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

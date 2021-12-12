@@ -1,0 +1,243 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>CraftingSystemUse</name>
+    <events>
+        <event-block sid="871740406857049">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="426419398526732" type="Keyboard">
+                    <param id="0" name="Key">27</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="2" name="Set visible" sid="530129765662726" type="CraftingTableButton">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="808385501879079">
+            <conditions>
+                <condition id="6" name="On object clicked" sid="605939161774229" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">0</param>
+                    <param id="2" name="Object clicked">CraftingStation</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-15" name="Set visible" sid="682666474221350" type="Brown">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="2" name="Set visible" sid="808091966013250" type="WoodaxeCraft">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="2" name="Set visible" sid="925075192150163" type="WoodPickaxeCraft">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="2" name="Set visible" sid="199427079668124" type="StonePickaxeCraft">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="2" name="Set visible" sid="926966030474276" type="StoneaxeCraft">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="2" name="Set visible" sid="957172879907738" type="StoneSwordCraft">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="2" name="Set visible" sid="875924455385334" type="WoodSwordCraft">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="975871937232173">
+            <conditions>
+                <condition id="0" name="On clicked" sid="913935115930755" type="WoodSwordCraft" />
+                <condition id="-14" name="Compare variable" sid="359448326927896" type="System">
+                    <param id="0" name="Variable">Wood</param>
+                    <param id="1" name="Comparison">5</param>
+                    <param id="2" name="Value">40</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="382160737776396" type="System">
+                    <param id="0" name="Variable">SwordLife</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="3" name="Set enabled" sid="941964983801937" type="WoodSwordCraft">
+                    <param id="0" name="Mode">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="876561559171738" type="System">
+                    <param id="0" name="Variable">WeaponDamage</param>
+                    <param id="1" name="Value">20</param>
+                </action>
+                <action id="-11" name="Subtract from" sid="709220419117745" type="System">
+                    <param id="0" name="Variable">Wood</param>
+                    <param id="1" name="Value">40</param>
+                </action>
+                <action id="-9" name="Set value" sid="373936413124887" type="System">
+                    <param id="0" name="Variable">SwordLife</param>
+                    <param id="1" name="Value">20</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="736576169836190">
+            <conditions>
+                <condition id="0" name="On clicked" sid="479282500068326" type="WoodaxeCraft" />
+                <condition id="-14" name="Compare variable" sid="583625119430403" type="System">
+                    <param id="0" name="Variable">Wood</param>
+                    <param id="1" name="Comparison">5</param>
+                    <param id="2" name="Value">25</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="483034928575549" type="System">
+                    <param id="0" name="Variable">AxeLife</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="3" name="Set enabled" sid="250705337642144" type="WoodaxeCraft">
+                    <param id="0" name="Mode">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="667342844731886" type="System">
+                    <param id="0" name="Variable">BreakingWoodPoint</param>
+                    <param id="1" name="Value">20</param>
+                </action>
+                <action id="-11" name="Subtract from" sid="741022852778868" type="System">
+                    <param id="0" name="Variable">Wood</param>
+                    <param id="1" name="Value">25</param>
+                </action>
+                <action id="-9" name="Set value" sid="563970082717163" type="System">
+                    <param id="0" name="Variable">AxeLife</param>
+                    <param id="1" name="Value">15</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="468978810677010">
+            <conditions>
+                <condition id="0" name="On clicked" sid="184595899464527" type="WoodPickaxeCraft" />
+                <condition id="-14" name="Compare variable" sid="348757531465140" type="System">
+                    <param id="0" name="Variable">Wood</param>
+                    <param id="1" name="Comparison">5</param>
+                    <param id="2" name="Value">50</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="562077498010841" type="System">
+                    <param id="0" name="Variable">PickaxeLife</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="3" name="Set enabled" sid="163263553108263" type="WoodPickaxeCraft">
+                    <param id="0" name="Mode">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="345778323641370" type="System">
+                    <param id="0" name="Variable">StoneBreaking</param>
+                    <param id="1" name="Value">15</param>
+                </action>
+                <action id="-11" name="Subtract from" sid="238599310974042" type="System">
+                    <param id="0" name="Variable">Wood</param>
+                    <param id="1" name="Value">50</param>
+                </action>
+                <action id="-9" name="Set value" sid="201706391911971" type="System">
+                    <param id="0" name="Variable">PickaxeLife</param>
+                    <param id="1" name="Value">10</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="668275519275920">
+            <conditions>
+                <condition id="0" name="On clicked" sid="743121274370710" type="StonePickaxeCraft" />
+                <condition id="-14" name="Compare variable" sid="563304453311462" type="System">
+                    <param id="0" name="Variable">Stone</param>
+                    <param id="1" name="Comparison">5</param>
+                    <param id="2" name="Value">100</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="433568004160281" type="System">
+                    <param id="0" name="Variable">PickaxeLife</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="3" name="Set enabled" sid="823767825780588" type="StonePickaxeCraft">
+                    <param id="0" name="Mode">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="669516963360220" type="System">
+                    <param id="0" name="Variable">StoneBreaking</param>
+                    <param id="1" name="Value">30</param>
+                </action>
+                <action id="-11" name="Subtract from" sid="185544807872986" type="System">
+                    <param id="0" name="Variable">Stone</param>
+                    <param id="1" name="Value">100</param>
+                </action>
+                <action id="-9" name="Set value" sid="494911029986978" type="System">
+                    <param id="0" name="Variable">PickaxeLife</param>
+                    <param id="1" name="Value">15</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="278582143335063">
+            <conditions>
+                <condition id="0" name="On clicked" sid="334608219976579" type="StoneSwordCraft" />
+                <condition id="-14" name="Compare variable" sid="242886362679334" type="System">
+                    <param id="0" name="Variable">Stone</param>
+                    <param id="1" name="Comparison">5</param>
+                    <param id="2" name="Value">80</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="163812498166819" type="System">
+                    <param id="0" name="Variable">SwordLife</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="3" name="Set enabled" sid="381336700279176" type="StoneSwordCraft">
+                    <param id="0" name="Mode">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="611659001340474" type="System">
+                    <param id="0" name="Variable">WeaponDamage</param>
+                    <param id="1" name="Value">20</param>
+                </action>
+                <action id="-11" name="Subtract from" sid="669451941169066" type="System">
+                    <param id="0" name="Variable">Stone</param>
+                    <param id="1" name="Value">80</param>
+                </action>
+                <action id="-9" name="Set value" sid="671354829955265" type="System">
+                    <param id="0" name="Variable">SwordLife</param>
+                    <param id="1" name="Value">35</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="340838776503890">
+            <conditions>
+                <condition id="0" name="On clicked" sid="133624198766336" type="StoneaxeCraft" />
+                <condition id="-14" name="Compare variable" sid="412632243565329" type="System">
+                    <param id="0" name="Variable">Stone</param>
+                    <param id="1" name="Comparison">5</param>
+                    <param id="2" name="Value">50</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="698238254500118" type="System">
+                    <param id="0" name="Variable">AxeLife</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="3" name="Set enabled" sid="526456293273929" type="StoneSwordCraft">
+                    <param id="0" name="Mode">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="820679685410286" type="System">
+                    <param id="0" name="Variable">BreakingWoodPoint</param>
+                    <param id="1" name="Value">30</param>
+                </action>
+                <action id="-11" name="Subtract from" sid="581954596398714" type="System">
+                    <param id="0" name="Variable">Stone</param>
+                    <param id="1" name="Value">50</param>
+                </action>
+                <action id="-9" name="Set value" sid="922801065873824" type="System">
+                    <param id="0" name="Variable">AxeLife</param>
+                    <param id="1" name="Value">25</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

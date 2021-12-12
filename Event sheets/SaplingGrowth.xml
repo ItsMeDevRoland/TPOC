@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>SaplingGrowth</name>
+    <events>
+        <event-block sid="310318267979701">
+            <conditions>
+                <condition id="-18" name="On created" sid="490171210931988" type="Sapling2" />
+            </conditions>
+            <actions>
+                <action id="-16" name="Wait" sid="601856187815331" type="System">
+                    <param id="0" name="Seconds">10</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="799372609978586" type="Sapling2">
+                    <param id="0" name="Object">Tree2</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="-9" name="Destroy" sid="640499120484827" type="Sapling2" />
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

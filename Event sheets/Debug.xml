@@ -1,0 +1,209 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Debug</name>
+    <events>
+        <event-block sid="217726126379666">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="837761098427896" type="Keyboard">
+                    <param id="0" name="Key">116</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-26" name="Restart layout" sid="379918063870600" type="System" />
+                <action id="14" name="Log" sid="311104327594124" type="Browser">
+                    <param id="0" name="Type">0</param>
+                    <param id="1" name="Message">&quot;Restarted Layout&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="402124613341739">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="781255657899310" type="Keyboard">
+                    <param id="0" name="Key">114</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-12" name="Subtract from" sid="840564503165093" type="FirstPlayer">
+                    <param id="0" name="Instance variable">PlayerHealth</param>
+                    <param id="1" name="Value">5</param>
+                </action>
+                <action id="14" name="Log" sid="734106008175012" type="Browser">
+                    <param id="0" name="Type">1</param>
+                    <param id="1" name="Message">&quot;Damage Incoded&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="878000510360489">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="719426559073353" type="Keyboard">
+                    <param id="0" name="Key">120</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-10" name="Add to" sid="526594925870679" type="System">
+                    <param id="0" name="Variable">Wood</param>
+                    <param id="1" name="Value">10</param>
+                </action>
+                <action id="14" name="Log" sid="627878006479196" type="Browser">
+                    <param id="0" name="Type">1</param>
+                    <param id="1" name="Message">&quot;Wood Given&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="865258371666213">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="347802259965509" type="Keyboard">
+                    <param id="0" name="Key">119</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-10" name="Add to" sid="159324181712434" type="System">
+                    <param id="0" name="Variable">Stone</param>
+                    <param id="1" name="Value">10</param>
+                </action>
+                <action id="14" name="Log" sid="494139388063440" type="Browser">
+                    <param id="0" name="Type">1</param>
+                    <param id="1" name="Message">&quot;Stone Given&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="150649790648867">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="317320802026907" type="Keyboard">
+                    <param id="0" name="Key">118</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-10" name="Add to" sid="705517143887078" type="System">
+                    <param id="0" name="Variable">Grass</param>
+                    <param id="1" name="Value">10</param>
+                </action>
+                <action id="14" name="Log" sid="962473561738895" type="Browser">
+                    <param id="0" name="Type">1</param>
+                    <param id="1" name="Message">&quot;Grass Given&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="799720822435355">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="281473378889785" type="Keyboard">
+                    <param id="0" name="Key">117</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-10" name="Add to" sid="213454533993577" type="System">
+                    <param id="0" name="Variable">SlimeEssence</param>
+                    <param id="1" name="Value">10</param>
+                </action>
+                <action id="14" name="Log" sid="332102147826130" type="Browser">
+                    <param id="0" name="Type">1</param>
+                    <param id="1" name="Message">&quot;Slime Essence Given&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="337409712331766">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="754059461637757" type="Keyboard">
+                    <param id="0" name="Key">121</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-36" name="Save" sid="749201516479247" type="System">
+                    <param id="0" name="Slot">&quot;Save&quot;</param>
+                </action>
+                <action id="14" name="Log" sid="762682140160826" type="Browser">
+                    <param id="0" name="Type">1</param>
+                    <param id="1" name="Message">&quot;Save WARNING!!!&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="375707248415673">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="873551074414535" type="Keyboard">
+                    <param id="0" name="Key">123</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="26" name="Show dev tools" sid="623732882074326" type="NWjs" />
+                <action id="14" name="Log" sid="118198150281807" type="Browser">
+                    <param id="0" name="Type">1</param>
+                    <param id="1" name="Message">&quot;Given DEBUG ACTIVE&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="961448608852757">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="311093959772075" type="Keyboard">
+                    <param id="0" name="Key">113</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="922827986214405" type="System">
+                    <param id="0" name="Layout">Menu</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="368465092606175">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="858278767673241" type="Keyboard">
+                    <param id="0" name="Key">187</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-10" name="Add to" sid="182311144204565" type="System">
+                    <param id="0" name="Variable">Hour</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="14" name="Log" sid="589821015930319" type="Browser">
+                    <param id="0" name="Type">1</param>
+                    <param id="1" name="Message">Hour</param>
+                </action>
+                <action id="14" name="Log" sid="530512404796220" type="Browser">
+                    <param id="0" name="Type">1</param>
+                    <param id="1" name="Message">Minute</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="549793847314028">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="181824859391856" type="Keyboard">
+                    <param id="0" name="Key">189</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-11" name="Subtract from" sid="951025465825187" type="System">
+                    <param id="0" name="Variable">Hour</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="14" name="Log" sid="747324621943630" type="Browser">
+                    <param id="0" name="Type">1</param>
+                    <param id="1" name="Message">Hour</param>
+                </action>
+                <action id="14" name="Log" sid="746522542203153" type="Browser">
+                    <param id="0" name="Type">1</param>
+                    <param id="1" name="Message">Minute</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="282594697766916">
+            <conditions>
+                <condition id="-28" name="On save complete" sid="498534412098916" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Set item" sid="242519420356659" type="LocalStorage">
+                    <param id="0" name="Key">&quot;Save&quot;</param>
+                    <param id="1" name="Value">SaveStateJSON</param>
+                </action>
+                <action id="0" name="Write file" sid="368184257007850" type="NWjs">
+                    <param id="0" name="Path">NWjs.ChosenPath</param>
+                    <param id="1" name="Contents">SaveStateJSON</param>
+                </action>
+                <action id="14" name="Log" sid="818173635264502" type="Browser">
+                    <param id="0" name="Type">1</param>
+                    <param id="1" name="Message">&quot;Saving Completed ;)&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

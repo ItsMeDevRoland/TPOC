@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>DusSkull&apos;sScript</name>
+    <events>
+        <event-block sid="481537286159474">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="268068626977893" type="FirstPlayer">
+                    <param id="0" name="Instance variable">PlayerHealth</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">30</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="431621441074923" type="System">
+                    <param id="0" name="Variable">Hour</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">5</param>
+                </condition>
+                <condition id="-6" name="Every X seconds" sid="522556032529044" type="System">
+                    <param id="0" name="Interval (seconds)">2</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Spawn another object" sid="568530755267455" type="FirstPlayer">
+                    <param id="0" name="Object">DusSkullsBeacon</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="-16" name="Wait" sid="468194438747440" type="System">
+                    <param id="0" name="Seconds">1</param>
+                </action>
+                <action id="-9" name="Destroy" sid="699267120150449" type="DusSkullsBeacon" />
+            </actions>
+        </event-block>
+        <event-group description="" sid="647515641955757" title="TouchDead" />
+        <event-block sid="816199807436253">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="843495984056024" type="DusSkullsBeacon">
+                    <param id="0" name="Object">FirstPlayer</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-12" name="Subtract from" sid="993457230588693" type="FirstPlayer">
+                    <param id="0" name="Instance variable">PlayerHealth</param>
+                    <param id="1" name="Value">50</param>
+                </action>
+                <action id="-9" name="Destroy" sid="427963501618297" type="DusSkullsBeacon" />
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Player&apos;s Hunger System</name>
+    <events>
+        <variable constant="0" name="HungerBarIncrease" sid="185082916741465" static="0" type="number">0</variable>
+        <variable constant="0" name="HungerRatio" sid="401465014758415" static="0" type="number">5</variable>
+        <variable constant="0" name="HungerSpeed" sid="473208890090413" static="0" type="number">20</variable>
+        <event-block sid="485380233848251">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="454241336937157" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="912725742257662" type="HungerQuantity">
+                    <param id="0" name="Text">FirstPlayer.HungerBar</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="499870663198440">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="591958172145437" type="System">
+                    <param id="0" name="Interval (seconds)">HungerSpeed</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-12" name="Subtract from" sid="737440370049094" type="FirstPlayer">
+                    <param id="0" name="Instance variable">HungerBar</param>
+                    <param id="1" name="Value">HungerRatio</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-group description="" sid="194384444868286" title="HungerPenalty" />
+        <event-block sid="994090095759953">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="692950236890589" type="FirstPlayer">
+                    <param id="0" name="Instance variable">PlayerHealth</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">85</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-11" name="Subtract from" sid="548693365606956" type="System">
+                    <param id="0" name="Variable">HungerSpeed</param>
+                    <param id="1" name="Value">5</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="567592756208095">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="985949499453375" type="FirstPlayer">
+                    <param id="0" name="Instance variable">PlayerHealth</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">50</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-11" name="Subtract from" sid="778675233292898" type="System">
+                    <param id="0" name="Variable">HungerSpeed</param>
+                    <param id="1" name="Value">10</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="713930507223482">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="194165752897750" type="FirstPlayer">
+                    <param id="0" name="Instance variable">PlayerHealth</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">25</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-11" name="Subtract from" sid="168766187543078" type="System">
+                    <param id="0" name="Variable">HungerSpeed</param>
+                    <param id="1" name="Value">15</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="289481544063815">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="221013770366928" type="FirstPlayer">
+                    <param id="0" name="Instance variable">PlayerHealth</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">10</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-11" name="Subtract from" sid="971256911861035" type="System">
+                    <param id="0" name="Variable">HungerSpeed</param>
+                    <param id="1" name="Value">19</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="628260916069257">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="381087264670340" type="FirstPlayer">
+                    <param id="0" name="Instance variable">PlayerHealth</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-6" name="Every X seconds" sid="657515803171698" type="System">
+                    <param id="0" name="Interval (seconds)">2</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-12" name="Subtract from" sid="173429715220065" type="FirstPlayer">
+                    <param id="0" name="Instance variable">PlayerHealth</param>
+                    <param id="1" name="Value">20</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-group description="" sid="483030464271528" title="HungerRecover" />
+        <event-block sid="532443032322983">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="872898047576944" type="FirstPlayer">
+                    <param id="0" name="Instance variable">HungerBar</param>
+                    <param id="1" name="Comparison">5</param>
+                    <param id="2" name="Value">90</param>
+                </condition>
+                <condition id="-7" name="Compare instance variable" sid="176978474757493" type="FirstPlayer">
+                    <param id="0" name="Instance variable">PlayerHealth</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">99</param>
+                </condition>
+                <condition id="-6" name="Every X seconds" sid="959776231218885" type="System">
+                    <param id="0" name="Interval (seconds)">5</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-11" name="Add to" sid="329455030515294" type="FirstPlayer">
+                    <param id="0" name="Instance variable">PlayerHealth</param>
+                    <param id="1" name="Value">10</param>
+                </action>
+                <action id="-12" name="Subtract from" sid="446148878580010" type="FirstPlayer">
+                    <param id="0" name="Instance variable">HungerBar</param>
+                    <param id="1" name="Value">5</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-group description="" sid="262218743056433" title="HungerIncrease" />
+    </events>
+</c2eventsheet>

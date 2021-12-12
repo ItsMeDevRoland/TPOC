@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Pigs</name>
+    <events>
+        <event-block sid="823533559903898">
+            <conditions>
+                <condition id="-18" name="On created" sid="464883410233197" type="Pig" />
+            </conditions>
+            <actions>
+                <action behavior="Pathfinding" id="0" name="Find path" sid="169933368957648" type="Pig">
+                    <param id="0" name="X">Grass.X</param>
+                    <param id="1" name="Y">Grass.Y</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="943145403840141">
+            <conditions>
+                <condition behavior="Pathfinding" id="0" name="On path found" sid="297004887318268" type="Pig" />
+            </conditions>
+            <actions>
+                <action behavior="Pathfinding" id="1" name="Move along path" sid="306614007566616" type="Pig" />
+            </actions>
+        </event-block>
+        <event-block sid="518847381997731">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="929162617618628" type="System">
+                    <param id="0" name="Interval (seconds)">20</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Spawn another object" sid="257013525345076" type="Pig">
+                    <param id="0" name="Object">Grass</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="385080244198663">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="227041529479926" type="Grass">
+                    <param id="0" name="Object">Pig</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-16" name="Wait" sid="972406571407196" type="System">
+                    <param id="0" name="Seconds">10</param>
+                </action>
+                <action id="-9" name="Destroy" sid="774524336007128" type="Grass" />
+                <action behavior="Pathfinding" id="0" name="Find path" sid="280052952617209" type="Pig">
+                    <param id="0" name="X">Grass.X</param>
+                    <param id="1" name="Y">Grass.Y</param>
+                </action>
+                <action id="1" name="Set tile" sid="358949919637197" type="Tilemap">
+                    <param id="0" name="Tile X">Grass2.X</param>
+                    <param id="1" name="Tile Y">Grass2.Y</param>
+                    <param id="2" name="Tile">0</param>
+                    <param id="3" name="State">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="200490229657606">
+            <conditions>
+                <condition behavior="Pathfinding" id="6" name="Compare speed" sid="121921694997280" type="Pig">
+                    <param id="0" name="Comparison">5</param>
+                    <param id="1" name="Speed">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="161824956669070" type="Pig">
+                    <param id="0" name="Animation">&quot;Default&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="969688339714328">
+            <conditions>
+                <condition behavior="Pathfinding" id="6" name="Compare speed" sid="881261778548964" type="Pig">
+                    <param id="0" name="Comparison">3</param>
+                    <param id="1" name="Speed">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Pathfinding" id="0" name="Find path" sid="758054144934192" type="Pig">
+                    <param id="0" name="X">Grass.X</param>
+                    <param id="1" name="Y">Grass.Y</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="353859790826076">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="200540144875535" type="Pig">
+                    <param id="0" name="Instance variable">PigHealth</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="1" name="Is overlapping another object" sid="369977172767872" type="BuildSizeLv1">
+                    <param id="0" name="Object">Pig</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-10" name="Add to" sid="167563315951340" type="System">
+                    <param id="0" name="Variable">RawMeat</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-9" name="Destroy" sid="552140829948694" type="Pig" />
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

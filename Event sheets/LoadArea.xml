@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>LoadArea</name>
+    <events>
+        <variable constant="0" name="deleteClick" sid="919009207643112" static="0" type="number">0</variable>
+        <event-block sid="708435436034583">
+            <conditions>
+                <condition id="0" name="On clicked" sid="839856927431724" type="LoadIngame" />
+            </conditions>
+            <actions>
+                <action id="5" name="Check item exists" sid="572579013124475" type="LocalStorage">
+                    <param id="0" name="Key">&quot;Save&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="933900593660511">
+            <conditions>
+                <condition id="9" name="On item exists" sid="817910978817074" type="LocalStorage">
+                    <param id="0" name="Key">&quot;Save&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="1" name="Get item" sid="362133445294123" type="LocalStorage">
+                    <param id="0" name="Key">&quot;Save&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="841306311714696">
+            <conditions>
+                <condition id="1" name="On item get" sid="717022378374438" type="LocalStorage">
+                    <param id="0" name="Key">&quot;Save&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-38" name="Load from JSON" sid="892487718127167" type="System">
+                    <param id="0" name="JSON">LocalStorage.ItemValue</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="297631718378024">
+            <conditions>
+                <condition id="0" name="On clicked" sid="754297690645784" type="LoadFromDrive" />
+            </conditions>
+            <actions>
+                <action id="6" name="Show open dialog" sid="626055463234816" type="NWjs">
+                    <param id="0" name="Accept">&quot;&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="407406785641815">
+            <conditions>
+                <condition id="0" name="On clicked" sid="597103252732274" type="BacktoMainMenu" />
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="943006638698715" type="System">
+                    <param id="0" name="Layout">Menu</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="689801093203731">
+            <conditions>
+                <condition id="0" name="On clicked" sid="916850296111134" type="ClearUnusedContent" />
+                <condition id="-14" name="Compare variable" sid="876227823051083" type="System">
+                    <param id="0" name="Variable">deleteClick</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="944628766308609" type="System">
+                    <param id="0" name="Variable">deleteClick</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="6" name="Show open dialog" sid="322185163108332" type="NWjs">
+                    <param id="0" name="Accept">&quot;.json, .jsonbackup&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="230147549638802">
+            <conditions>
+                <condition id="2" name="On open dialog OK" sid="524010406299714" type="NWjs" />
+                <condition id="-14" name="Compare variable" sid="885691551889160" type="System">
+                    <param id="0" name="Variable">deleteClick</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="2" name="Delete file" sid="748942830529274" type="NWjs">
+                    <param id="0" name="Path">NWjs.ChosenPath</param>
+                </action>
+                <action id="-9" name="Set value" sid="687687099192915" type="System">
+                    <param id="0" name="Variable">deleteClick</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="309950647574565">
+            <conditions>
+                <condition id="2" name="On open dialog OK" sid="917240373666261" type="NWjs" />
+            </conditions>
+            <actions>
+                <action id="0" name="Set item" sid="220765484961779" type="LocalStorage">
+                    <param id="0" name="Key">&quot;Save&quot;</param>
+                    <param id="1" name="Value">NWjs.ReadFile(Nwjs.ChosenPath)</param>
+                </action>
+                <action id="1" name="Get item" sid="763324916022595" type="LocalStorage">
+                    <param id="0" name="Key">&quot;Save&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

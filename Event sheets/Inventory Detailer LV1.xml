@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Inventory Detailer LV1</name>
+    <events>
+        <variable constant="0" name="RawMeatHungerBoost" sid="475421776310858" static="0" type="number">20</variable>
+        <variable constant="0" name="RawMeat" sid="174285316134649" static="0" type="number">0</variable>
+        <event-block sid="172602819332298">
+            <conditions>
+                <condition id="6" name="On object clicked" sid="290713378127094" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">0</param>
+                    <param id="2" name="Object clicked">InventoryDetailer2</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="2" name="Set visible" sid="647006390398835" type="InventoryDetailerLv1Button">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="237478692950900" type="InventoryDetailerLV1Sprite">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="189164759930230" type="InventoryDetailerLv1Text">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="591814933649539" type="Brown">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="465591071178415">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="556265487691115" type="Keyboard">
+                    <param id="0" name="Key">27</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="2" name="Set visible" sid="149036207285701" type="InventoryDetailerLv1Button">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="185326436653062" type="InventoryDetailerLV1Sprite">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="737525865460214" type="InventoryDetailerLv1Text">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="568248775160908" type="Brown">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-group description="" sid="991764857868563" title="Action" />
+        <event-block sid="921433869511236">
+            <conditions>
+                <condition id="0" name="On clicked" sid="173345278561488" type="EatRawMeat" />
+                <condition id="-14" name="Compare variable" sid="211642122839706" type="System">
+                    <param id="0" name="Variable">RawMeat</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-11" name="Subtract from" sid="851755774118166" type="System">
+                    <param id="0" name="Variable">RawMeat</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-11" name="Add to" sid="728892697132052" type="FirstPlayer">
+                    <param id="0" name="Instance variable">HungerBar</param>
+                    <param id="1" name="Value">RawMeatHungerBoost</param>
+                </action>
+                <action id="-11" name="Add to" sid="325675621383674" type="FirstPlayer">
+                    <param id="0" name="Instance variable">PlayerHealth</param>
+                    <param id="1" name="Value">RawMeatHungerBoost</param>
+                </action>
+                <action id="-12" name="Subtract from" sid="929243010883004" type="FirstPlayer">
+                    <param id="0" name="Instance variable">WaterBar</param>
+                    <param id="1" name="Value">10</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

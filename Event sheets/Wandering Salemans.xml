@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Wandering Salemans</name>
+    <events>
+        <event-group description="" sid="892217488074962" title="Walking System" />
+        <event-group description="" sid="194158488266019" title="Wandering Saleman Breaking Rock" />
+        <event-block sid="827029581783492">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="364934522058575" type="System">
+                    <param id="0" name="Variable">Hour</param>
+                    <param id="1" name="Comparison">5</param>
+                    <param id="2" name="Value">10</param>
+                </condition>
+                <condition id="-6" name="Every X seconds" sid="655412950053452" type="System">
+                    <param id="0" name="Interval (seconds)">5</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Pathfinding" id="0" name="Find path" sid="835181124794887" type="WanderingSalesman">
+                    <param id="0" name="X">Rock2.X</param>
+                    <param id="1" name="Y">Rock2.Y</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-group description="" sid="275086103420987" title="Wandering Saleman Breaking Tree" />
+        <event-block sid="915790193346889">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="238562387336144" type="System">
+                    <param id="0" name="Variable">Hour</param>
+                    <param id="1" name="Comparison">5</param>
+                    <param id="2" name="Value">8</param>
+                </condition>
+                <condition id="-6" name="Every X seconds" sid="377190170165312" type="System">
+                    <param id="0" name="Interval (seconds)">5</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Pathfinding" id="0" name="Find path" sid="172177289037207" type="WanderingSalesman">
+                    <param id="0" name="X">Tree2.X</param>
+                    <param id="1" name="Y">Tree2.Y</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="114811951898686">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="829378686608600" type="System">
+                    <param id="0" name="Variable">Hour</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">5</param>
+                </condition>
+                <condition id="-6" name="Every X seconds" sid="816555637250379" type="System">
+                    <param id="0" name="Interval (seconds)">5</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Pathfinding" id="0" name="Find path" sid="192830921094790" type="WanderingSalesman">
+                    <param id="0" name="X">CampingTent.X</param>
+                    <param id="1" name="Y">CampingTent.Y</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-group description="" sid="402641331334143" title="StartWalking" />
+        <event-block sid="598045073662749">
+            <conditions>
+                <condition behavior="Pathfinding" id="0" name="On path found" sid="639380574419190" type="WanderingSalesman" />
+            </conditions>
+            <actions>
+                <action behavior="Pathfinding" id="1" name="Move along path" sid="657626315429655" type="WanderingSalesman" />
+            </actions>
+        </event-block>
+        <event-group description="" sid="507856124511148" title="Break A Rock Or Tree" />
+        <event-block sid="682406240070401">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="976729128943664" type="WanderingSalesman">
+                    <param id="0" name="Object">Rock2</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-16" name="Wait" sid="763952328462383" type="System">
+                    <param id="0" name="Seconds">10</param>
+                </action>
+                <action id="-9" name="Destroy" sid="351047072969342" type="Rock2" />
+            </actions>
+        </event-block>
+        <event-block sid="675564344881144">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="975177878837949" type="WanderingSalesman">
+                    <param id="0" name="Object">Tree2</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-16" name="Wait" sid="848980123601488" type="System">
+                    <param id="0" name="Seconds">10</param>
+                </action>
+                <action id="-9" name="Destroy" sid="835543144354174" type="Tree2" />
+            </actions>
+        </event-block>
+        <event-group description="" sid="979820699653350" title="Interact" />
+        <event-block sid="244295056241205">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="850722364072316" type="Keyboard">
+                    <param id="0" name="Key">69</param>
+                </condition>
+                <condition id="1" name="Is overlapping another object" sid="639302131559891" type="BuildSizeLv1">
+                    <param id="0" name="Object">WanderingSalesman</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-15" name="Set visible" sid="996970555023624" type="TextBoxForTravelingSalesman">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="699783956494601" type="Brown">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="0" name="Set text" sid="404486968454496" type="TextBoxForTravelingSalesman">
+                    <param id="0" name="Text">&quot;Heya, Right Now I Do Nothing Since Roland Is Still Doing Some Modification And Adding A New Town... Soon You Can Trade With Me... Just Wait Alright?&quot;</param>
+                </action>
+                <action id="-16" name="Wait" sid="724891390864715" type="System">
+                    <param id="0" name="Seconds">10</param>
+                </action>
+                <action id="-15" name="Set visible" sid="584411951436211" type="TextBoxForTravelingSalesman">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="340519484290213" type="Brown">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

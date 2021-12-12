@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Slime Nest</name>
+    <events>
+        <event-block sid="499888730940144">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="163592716046896" type="System">
+                    <param id="0" name="Interval (seconds)">50</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Spawn another object" sid="290879535678845" type="SlimeNest">
+                    <param id="0" name="Object">Slime</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="979474931622114" type="Slime">
+                    <param id="0" name="Object">SlimeView</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="223337519068535">
+            <conditions>
+                <condition id="-18" name="On created" sid="704717695991735" type="Slime" />
+            </conditions>
+            <actions>
+                <action id="-16" name="Wait" sid="459601077695703" type="System">
+                    <param id="0" name="Seconds">30</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="974017789576400" type="Slime">
+                    <param id="0" name="Object">SlimeNest</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="-9" name="Destroy" sid="467060737554075" type="Slime" />
+            </actions>
+        </event-block>
+        <event-block sid="168705740458028">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="166055488508501" type="SlimeNest">
+                    <param id="0" name="Object">Slime</param>
+                </condition>
+                <condition id="-6" name="Every X seconds" sid="824024458065180" type="System">
+                    <param id="0" name="Interval (seconds)">10</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-11" name="Add to" sid="438221436598380" type="Slime">
+                    <param id="0" name="Instance variable">SlimeHealth</param>
+                    <param id="1" name="Value">10</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

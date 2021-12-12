@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>EmperorsTombSpawn</name>
+    <events>
+        <variable constant="0" name="EmperorSlimeIsSpawned" sid="285677008294518" static="0" type="number">0</variable>
+        <event-group description="" sid="200954085825823" title="SpaceClick" />
+        <event-block sid="852599391220808">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="906775715441329" type="BuildSizeLv1">
+                    <param id="0" name="Object">EmperorSlimeSummoningTomb</param>
+                </condition>
+                <condition id="-9" inverted="1" name="Is visible" sid="157874719146672" type="IgorTheEmperorRedSlime" />
+            </conditions>
+            <actions>
+                <action id="2" name="Set visible" sid="263142065641004" type="EmperorSlimeSpawn">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="556127920783013" type="SpawnEmperorSlimeText">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="631529796891363" type="Brown">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="702364994606668">
+            <conditions>
+                <condition id="0" name="On clicked" sid="608249829056240" type="No" />
+            </conditions>
+            <actions>
+                <action id="-15" name="Set visible" sid="628484815174303" type="Brown">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="732484700621086" type="SpawnEmperorSlimeText">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="2" name="Set visible" sid="982322680446272" type="EmperorSlimeSpawn">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="588161838281242">
+            <conditions>
+                <condition id="0" name="On clicked" sid="629077527453755" type="Yes20Slime" />
+                <condition id="-14" name="Compare variable" sid="161646663669936" type="System">
+                    <param id="0" name="Variable">SlimeEssence</param>
+                    <param id="1" name="Comparison">5</param>
+                    <param id="2" name="Value">20</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="719159769715015" type="AreYouSureYouGiveSlime">
+                    <param id="0" name="Text">&quot;You Have 10 Seconds Before The Boss Spawn&quot;</param>
+                </action>
+                <action id="-15" name="Set visible" sid="713859105114247" type="Brown">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="347170043751755" type="SpawnEmperorSlimeText">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="2" name="Set visible" sid="504650521124972" type="EmperorSlimeSpawn">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-16" name="Wait" sid="734713545869492" type="System">
+                    <param id="0" name="Seconds">10</param>
+                </action>
+                <action id="-9" name="Set value" sid="992582955469831" type="System">
+                    <param id="0" name="Variable">EmperorSlimeIsSpawned</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="185634040106441" type="EmperorSlimeSummoningTomb">
+                    <param id="0" name="Object">IgorTheEmperorRedSlime</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

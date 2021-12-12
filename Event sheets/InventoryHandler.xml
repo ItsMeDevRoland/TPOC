@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>InventoryHandler</name>
+    <events>
+        <variable constant="0" name="SlimeEssence" sid="319716434050208" static="0" type="number">0</variable>
+        <variable constant="0" name="Grass" sid="557314716424551" static="0" type="number">0</variable>
+        <variable constant="0" name="Stone" sid="567447353587377" static="0" type="number">0</variable>
+        <variable constant="0" name="Wood" sid="982956156888107" static="0" type="number">0</variable>
+        <event-block sid="914403158686766">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="167642511101705" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="911034030100826" type="WoodQuantity">
+                    <param id="0" name="Text">Wood</param>
+                </action>
+                <action id="0" name="Set text" sid="399444127887061" type="StoneQuantity">
+                    <param id="0" name="Text">Stone</param>
+                </action>
+                <action id="0" name="Set text" sid="981769894314850" type="GrassQuantity">
+                    <param id="0" name="Text">Grass</param>
+                </action>
+                <action id="0" name="Set text" sid="788250125150632" type="SlimeEssenceQuantity">
+                    <param id="0" name="Text">SlimeEssence</param>
+                </action>
+                <action id="0" name="Set text" sid="831959247763154" type="TotalCutPowerQuantity">
+                    <param id="0" name="Text">BreakingWoodPoint</param>
+                </action>
+                <action id="0" name="Set text" sid="255720939080486" type="TotalMiningPowerQuantity">
+                    <param id="0" name="Text">StoneBreaking</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="657930706686757">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="542356234200121" type="Keyboard">
+                    <param id="0" name="Key">69</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-15" name="Set visible" sid="551242200974167" type="InventorySprite">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="323453513330288" type="InventoryText">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="692128647544029" type="Brown2">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="161131240656065">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="915077373817437" type="Keyboard">
+                    <param id="0" name="Key">27</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-15" name="Set visible" sid="266729953268930" type="InventorySprite">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="260831693963519" type="InventoryText">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Player&apos;s Thirst System</name>
+    <events>
+        <variable constant="0" name="WaterThirstLevel" sid="949268717950810" static="0" type="number">5</variable>
+        <event-block sid="495749523377226">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="112450457773130" type="System">
+                    <param id="0" name="Interval (seconds)">5</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-12" name="Subtract from" sid="131817591756217" type="FirstPlayer">
+                    <param id="0" name="Instance variable">WaterBar</param>
+                    <param id="1" name="Value">WaterThirstLevel</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="529566552925550">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="410518272862950" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="330310110565081" type="ThirstQuantity">
+                    <param id="0" name="Text">FirstPlayer.WaterBar</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-group description="" sid="761907658322540" title="CheckingHard" />
+        <event-block sid="303056869700434">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="561515125710917" type="FirstPlayer">
+                    <param id="0" name="Instance variable">HungerBar</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">80</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="551820179238902" type="System">
+                    <param id="0" name="Variable">WaterThirstLevel</param>
+                    <param id="1" name="Value">5</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="902368320888870">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="557556734026549" type="FirstPlayer">
+                    <param id="0" name="Instance variable">HungerBar</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">80</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-10" name="Add to" sid="472946656203580" type="System">
+                    <param id="0" name="Variable">WaterThirstLevel</param>
+                    <param id="1" name="Value">10</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="274127321310571">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="812117806919080" type="FirstPlayer">
+                    <param id="0" name="Instance variable">HungerBar</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">50</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-10" name="Add to" sid="684473925283358" type="System">
+                    <param id="0" name="Variable">WaterThirstLevel</param>
+                    <param id="1" name="Value">20</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="838266532632619">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="868624461911825" type="FirstPlayer">
+                    <param id="0" name="Instance variable">HungerBar</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">30</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-10" name="Add to" sid="145049395111848" type="System">
+                    <param id="0" name="Variable">WaterThirstLevel</param>
+                    <param id="1" name="Value">30</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-group description="" sid="644188204215556" title="RegainingAndLoosing" />
+        <event-block sid="676400218039391">
+            <conditions>
+                <condition id="2" name="Key is down" sid="886196298108202" type="Keyboard">
+                    <param id="0" name="Key">32</param>
+                </condition>
+                <condition id="1" name="Is overlapping another object" sid="125966079038104" type="WaterBorder">
+                    <param id="0" name="Object">FirstPlayer</param>
+                </condition>
+                <condition id="-7" name="Compare instance variable" sid="805706107706355" type="FirstPlayer">
+                    <param id="0" name="Instance variable">PlayerHealth</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">100</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-11" name="Add to" sid="846733425757369" type="FirstPlayer">
+                    <param id="0" name="Instance variable">WaterBar</param>
+                    <param id="1" name="Value">5</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-group description="" sid="658206807984604" title="TellingTheGameWaterIs0" />
+        <event-block sid="427219132397371">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="657815600088420" type="System">
+                    <param id="0" name="Variable">WaterThirstLevel</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="624698219030408" type="System">
+                    <param id="0" name="Layout">Died</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="916224093811827">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="186100983459806" type="System">
+                    <param id="0" name="Variable">WaterThirstLevel</param>
+                    <param id="1" name="Comparison">5</param>
+                    <param id="2" name="Value">350</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="608394159349366" type="System">
+                    <param id="0" name="Layout">Died</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

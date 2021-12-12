@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Grass</name>
+    <events>
+        <event-block sid="446698462107554">
+            <conditions>
+                <condition id="2" name="Key is down" sid="157806264265181" type="Keyboard">
+                    <param id="0" name="Key">32</param>
+                </condition>
+                <condition id="1" name="Is overlapping another object" sid="943101351811976" type="BuildSizeLv1">
+                    <param id="0" name="Object">Grass</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-12" name="Subtract from" sid="447119475161179" type="Grass">
+                    <param id="0" name="Instance variable">GrassHealth</param>
+                    <param id="1" name="Value">BreakingWoodPoint</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-group description="" sid="618547894926839" title="GrassDied" />
+        <event-block sid="656905707398190">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="788164624443767" type="Grass">
+                    <param id="0" name="Instance variable">GrassHealth</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-1" name="Every tick" sid="501190290626452" type="System" />
+            </conditions>
+            <actions>
+                <action id="-10" name="Add to" sid="819468327212886" type="System">
+                    <param id="0" name="Variable">Grass</param>
+                    <param id="1" name="Value">3</param>
+                </action>
+                <action id="-9" name="Destroy" sid="210083275201802" type="Grass" />
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

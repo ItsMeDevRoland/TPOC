@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>StartingGameScript</name>
+    <events>
+        <event-group description="" sid="240074932486150" title="ClickPlay" />
+        <event-block sid="680254841768081">
+            <conditions>
+                <condition id="0" name="On clicked" sid="409141589999555" type="IUnderstand" />
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="151368069461674" type="System">
+                    <param id="0" name="Layout">Menu</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-group description="" sid="305300785833315" title="ClickExit" />
+        <event-block sid="832012703540525">
+            <conditions>
+                <condition id="0" name="On clicked" sid="745550641866654" type="CloseTheApp" />
+            </conditions>
+            <actions>
+                <action id="1" name="Close" sid="597020299128572" type="Browser" />
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

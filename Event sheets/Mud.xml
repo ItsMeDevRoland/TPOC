@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Mud</name>
+    <events>
+        <event-block sid="676281728613848">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="609368618830382" type="System">
+                    <param id="0" name="Interval (seconds)">50</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Spawn another object" sid="656316053689709" type="Mud">
+                    <param id="0" name="Object">Pig</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="571265350093459">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="509120141551173" type="Slime">
+                    <param id="0" name="Object">Mud</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-12" name="Subtract from" sid="280694893650604" type="Slime">
+                    <param id="0" name="Instance variable">SlimeHealth</param>
+                    <param id="1" name="Value">Slime.SlimeHealth</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="795358197736072">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="657852222729727" type="RedSlime">
+                    <param id="0" name="Object">Mud</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-12" name="Subtract from" sid="276646124664826" type="RedSlime">
+                    <param id="0" name="Instance variable">RedSlimeHealth</param>
+                    <param id="1" name="Value">RedSlime.RedSlimeHealth</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

@@ -1,0 +1,222 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>BuildingTable</name>
+    <events>
+        <variable constant="0" name="LockOpen" sid="822033871284216" static="0" type="number">0</variable>
+        <variable constant="0" name="NoLocker" sid="289493660661589" static="0" type="number">0</variable>
+        <variable constant="0" name="BuldingCraftPicker" sid="616259334409470" static="0" type="number">0</variable>
+        <variable constant="0" name="BuildingCraft" sid="403049928156488" static="0" type="text"></variable>
+        <variable constant="0" name="SlimeNeed" sid="312124904081370" static="0" type="number">0</variable>
+        <event-block sid="404847286995053">
+            <conditions>
+                <condition id="6" name="On object clicked" sid="730055825074037" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">0</param>
+                    <param id="2" name="Object clicked">BuildingTable2</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-15" name="Set visible" sid="230549833850510" type="Brown">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="2" name="Set visible" sid="616684960917803" type="BuildingTableCraft">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="320503506211783">
+            <conditions>
+                <condition id="0" name="On clicked" sid="660850110128959" type="StoneSpawn" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="529507799200433" type="System">
+                    <param id="0" name="Variable">BuildingCraft</param>
+                    <param id="1" name="Value">&quot;Stone&quot;</param>
+                </action>
+                <action id="-9" name="Set value" sid="565616310719593" type="System">
+                    <param id="0" name="Variable">SlimeNeed</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-9" name="Set value" sid="649444089409656" type="System">
+                    <param id="0" name="Variable">BuldingCraftPicker</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="179854370288291" type="Brown">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="2" name="Set visible" sid="354261092685732" type="BuildingTableCraft">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="0" name="Set text" sid="521601567253902" type="WhatDoYouCraft">
+                    <param id="0" name="Text">BuildingCraft</param>
+                </action>
+                <action id="0" name="Set text" sid="827025840455840" type="HowManyMaterials">
+                    <param id="0" name="Text">&quot;1 Slime Essence&quot;</param>
+                </action>
+                <action id="2" name="Set visible" sid="712656095636592" type="BuildingAreYouSureButtons">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="304635311297875" type="BuildingAreYouSureText">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="3" name="Set enabled" sid="240648625137680" type="BuildingAreYouSureButtons">
+                    <param id="0" name="Mode">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="579622130377347">
+            <conditions>
+                <condition id="0" name="On clicked" sid="501713911648401" type="WallCraft" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="322338090052139" type="System">
+                    <param id="0" name="Variable">BuildingCraft</param>
+                    <param id="1" name="Value">&quot;Wood Wall&quot;</param>
+                </action>
+                <action id="-9" name="Set value" sid="506079033363217" type="System">
+                    <param id="0" name="Variable">SlimeNeed</param>
+                    <param id="1" name="Value">2</param>
+                </action>
+                <action id="-9" name="Set value" sid="884229853687011" type="System">
+                    <param id="0" name="Variable">WoodNeed</param>
+                    <param id="1" name="Value">10</param>
+                </action>
+                <action id="-9" name="Set value" sid="156768327497691" type="System">
+                    <param id="0" name="Variable">BuldingCraftPicker</param>
+                    <param id="1" name="Value">2</param>
+                </action>
+                <action id="-15" name="Set visible" sid="142303739552485" type="Brown">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="2" name="Set visible" sid="422074313139558" type="BuildingTableCraft">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="0" name="Set text" sid="383730380619552" type="WhatDoYouCraft">
+                    <param id="0" name="Text">BuildingCraft</param>
+                </action>
+                <action id="0" name="Set text" sid="290740529306016" type="HowManyMaterials">
+                    <param id="0" name="Text">&quot;1 Slime Essence, 10 Woods&quot;</param>
+                </action>
+                <action id="2" name="Set visible" sid="917968847191938" type="BuildingAreYouSureButtons">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="374608295942684" type="BuildingAreYouSureText">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="3" name="Set enabled" sid="295795823080338" type="BuildingAreYouSureButtons">
+                    <param id="0" name="Mode">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="363611443539990">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="111884824718721" type="Keyboard">
+                    <param id="0" name="Key">27</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-15" name="Set visible" sid="543954494603649" type="Brown">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="2" name="Set visible" sid="551925890219866" type="BuildingTableCraft">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-group description="" sid="257096240843995" title="DataPickerForBuildingTable" />
+        <event-block sid="910196927384085">
+            <conditions>
+                <condition id="0" name="On clicked" sid="186076119976482" type="Yes" />
+                <condition id="-14" name="Compare variable" sid="672503505235303" type="System">
+                    <param id="0" name="Variable">SlimeNeed</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">SlimeEssence</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="995208477304851" type="System">
+                    <param id="0" name="Variable">BuldingCraftPicker</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-15" name="Set visible" sid="199898237973744" type="BuildingAreYouSureText">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="2" name="Set visible" sid="894095939230544" type="BuildingAreYouSureButtons">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="450483067857759" type="Brown">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="2" name="Set visible" sid="317041812611207" type="BuildingTableCraft">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-11" name="Subtract from" sid="559581010421006" type="System">
+                    <param id="0" name="Variable">SlimeEssence</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="691101854949544" type="FirstPlayer">
+                    <param id="0" name="Object">Rock2</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="877413056711940" type="System">
+                    <param id="0" name="Variable">BuldingCraftPicker</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="936061054697043">
+            <conditions>
+                <condition id="0" name="On clicked" sid="174147708668366" type="Yes" />
+                <condition id="-14" name="Compare variable" sid="615574337631797" type="System">
+                    <param id="0" name="Variable">SlimeNeed</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">SlimeEssence</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="542961884765128" type="System">
+                    <param id="0" name="Variable">WoodNeed</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">Wood</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="157671208023040" type="System">
+                    <param id="0" name="Variable">BuldingCraftPicker</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">2</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-15" name="Set visible" sid="144691160717545" type="BuildingAreYouSureText">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="2" name="Set visible" sid="688124374027495" type="BuildingAreYouSureButtons">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="486651121522707" type="Brown">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="2" name="Set visible" sid="248704362512165" type="BuildingTableCraft">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-11" name="Subtract from" sid="209232180721322" type="System">
+                    <param id="0" name="Variable">SlimeEssence</param>
+                    <param id="1" name="Value">2</param>
+                </action>
+                <action id="-11" name="Subtract from" sid="981239398696769" type="System">
+                    <param id="0" name="Variable">Wood</param>
+                    <param id="1" name="Value">10</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="377407001817696" type="FirstPlayer">
+                    <param id="0" name="Object">Wall</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="155161679926271" type="System">
+                    <param id="0" name="Variable">BuldingCraftPicker</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

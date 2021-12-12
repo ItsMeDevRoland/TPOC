@@ -1,0 +1,209 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>AnomallyHandler</name>
+    <events>
+        <variable constant="0" name="Anomally3HealthBuff" sid="596086871042124" static="0" type="number">10</variable>
+        <variable constant="0" name="Anomally2HealthBuff" sid="230313153344191" static="0" type="number">30</variable>
+        <variable constant="0" name="Anomally1HealthBuff" sid="818041692101108" static="0" type="number">20</variable>
+        <event-group description="" sid="916703255800026" title="HandlingSpawning" />
+        <event-block sid="930807500878980">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="610213398688901" type="System">
+                    <param id="0" name="Variable">Hour</param>
+                    <param id="1" name="Comparison">5</param>
+                    <param id="2" name="Value">9</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="217162499815546" type="Anomally" />
+            </actions>
+        </event-block>
+        <event-block sid="874485918027218">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="409851861147675" type="System">
+                    <param id="0" name="Variable">Hour</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">5</param>
+                </condition>
+                <condition id="-6" name="Every X seconds" sid="428059832655894" type="System">
+                    <param id="0" name="Interval (seconds)">10</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Spawn another object" sid="335648399054215" type="DusSkullStatue">
+                    <param id="0" name="Object">Anomally</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="-11" name="Add to" sid="418640161297156" type="Anomally">
+                    <param id="0" name="Instance variable">Anomally1Health</param>
+                    <param id="1" name="Value">Anomally1HealthBuff</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-group description="" sid="397403927262796" title="AITweeks" />
+        <event-block sid="946917290438547">
+            <conditions>
+                <condition behavior="Pathfinding" id="0" name="On path found" sid="254073167516600" type="Anomally" />
+                <condition id="1" inverted="1" name="Is overlapping another object" sid="146532062238654" type="TorchLight">
+                    <param id="0" name="Object">FirstPlayer</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Pathfinding" id="1" name="Move along path" sid="255137117169975" type="Anomally" />
+            </actions>
+        </event-block>
+        <event-block sid="538749601918952">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="454450126466695" type="System">
+                    <param id="0" name="Interval (seconds)">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Pathfinding" id="0" name="Find path" sid="400266139283896" type="Anomally">
+                    <param id="0" name="X">FirstPlayer.X</param>
+                    <param id="1" name="Y">FirstPlayer.Y</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="764856581613387">
+            <conditions>
+                <condition id="-18" name="On created" sid="236216501316828" type="Anomally" />
+                <condition id="-12" name="Repeat" sid="925497248964880" type="System">
+                    <param id="0" name="Count">30</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Pathfinding" id="0" name="Find path" sid="859157813227424" type="Anomally">
+                    <param id="0" name="X">FirstPlayer.X</param>
+                    <param id="1" name="Y">FirstPlayer.Y</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-group description="" sid="153153634812867" title="ByePlayer" />
+        <event-block sid="749281659033542">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="299097748322357" type="Anomally">
+                    <param id="0" name="Object">FirstPlayer</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-12" name="Subtract from" sid="264915498290666" type="FirstPlayer">
+                    <param id="0" name="Instance variable">PlayerHealth</param>
+                    <param id="1" name="Value">Anomally.Anomally1Damage</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="635282004261981">
+            <conditions>
+                <condition behavior="Pathfinding" id="6" name="Compare speed" sid="648639857127580" type="Anomally">
+                    <param id="0" name="Comparison">5</param>
+                    <param id="1" name="Speed">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="703317000926621" type="Anomally">
+                    <param id="0" name="Animation">&quot;Default&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-group description="" sid="728964087876873" title="AnomallyEvolution" />
+        <event-block sid="893145787308561">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="280367794727649" type="System">
+                    <param id="0" name="Variable">Day</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">5</param>
+                </condition>
+                <condition id="-4" name="Trigger once while true" sid="853339496905105" type="System" />
+            </conditions>
+            <actions>
+                <action id="-11" name="Add to" sid="592913042354394" type="Anomally">
+                    <param id="0" name="Instance variable">Anomally1Damage</param>
+                    <param id="1" name="Value">Anomally.Anomally1Damage</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="507565431445862">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="850449130864569" type="System">
+                    <param id="0" name="Variable">Day</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">10</param>
+                </condition>
+                <condition id="-4" name="Trigger once while true" sid="247782012913003" type="System" />
+            </conditions>
+            <actions>
+                <action id="-11" name="Add to" sid="446277098697586" type="Anomally">
+                    <param id="0" name="Instance variable">Anomally1Damage</param>
+                    <param id="1" name="Value">Anomally.Anomally1Damage</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="588285620175724">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="319565775979226" type="System">
+                    <param id="0" name="Variable">Day</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">15</param>
+                </condition>
+                <condition id="-4" name="Trigger once while true" sid="976121892989962" type="System" />
+            </conditions>
+            <actions>
+                <action id="-11" name="Add to" sid="125334645751355" type="Anomally">
+                    <param id="0" name="Instance variable">Anomally1Damage</param>
+                    <param id="1" name="Value">Anomally.Anomally1Damage</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="449854966788066">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="810683882527172" type="System">
+                    <param id="0" name="Variable">Day</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">20</param>
+                </condition>
+                <condition id="-4" name="Trigger once while true" sid="848451784291401" type="System" />
+            </conditions>
+            <actions>
+                <action id="-11" name="Add to" sid="900483886613981" type="Anomally">
+                    <param id="0" name="Instance variable">Anomally1Damage</param>
+                    <param id="1" name="Value">Anomally.Anomally1Damage</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="538047151201044">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="843699405545688" type="System">
+                    <param id="0" name="Variable">Day</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">25</param>
+                </condition>
+                <condition id="-4" name="Trigger once while true" sid="129957715387231" type="System" />
+            </conditions>
+            <actions>
+                <action id="-11" name="Add to" sid="611387649748024" type="Anomally">
+                    <param id="0" name="Instance variable">Anomally1Damage</param>
+                    <param id="1" name="Value">Anomally.Anomally1Damage</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="572940938603162">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="617553214948802" type="System">
+                    <param id="0" name="Variable">Day</param>
+                    <param id="1" name="Comparison">5</param>
+                    <param id="2" name="Value">30</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-11" name="Add to" sid="175247619552165" type="Anomally">
+                    <param id="0" name="Instance variable">Anomally1Damage</param>
+                    <param id="1" name="Value">Anomally.Anomally1Damage</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

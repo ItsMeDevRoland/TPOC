@@ -1,0 +1,537 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>BuildingSystem</name>
+    <events>
+        <variable constant="0" name="TabIsOpenBuildingSystem" sid="922295045656025" static="0" type="number">0</variable>
+        <variable constant="0" name="GrassNeed" sid="406292833025998" static="0" type="number">0</variable>
+        <variable constant="0" name="Crafting" sid="488588166656034" static="0" type="text"></variable>
+        <variable constant="0" name="WhatToPick" sid="226136438283933" static="0" type="number">0</variable>
+        <variable constant="0" name="WoodNeed" sid="259512586478949" static="0" type="number">0</variable>
+        <event-group description="" sid="399098149348356" title="BuildingKeyboard" />
+        <event-block sid="653043680359608">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="406691165824999" type="Keyboard">
+                    <param id="0" name="Key">66</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="371302009580769" type="System">
+                    <param id="0" name="Variable">TabIsOpenBuildingSystem</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="809059460731372" type="BuildingTab">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="435569435944536">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="296255958719685" type="Keyboard">
+                    <param id="0" name="Key">27</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="560650312003884" type="System">
+                    <param id="0" name="Variable">TabIsOpenBuildingSystem</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="680087159347957" type="BuildingAreYouSureText">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="2" name="Set visible" sid="373643780193112" type="BuildingAreYouSureButtons">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="679629161055523" type="Tab">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="3" name="Set enabled" sid="987630358334142" type="BuildingAreYouSureButtons">
+                    <param id="0" name="Mode">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="631768001842273" type="CraftingStation2">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="835743173867723" type="Sapling">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="419658596013992" type="InventoryDetailer">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="660876164617346" type="Torch">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="818959578291435" type="BuildingTable">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-group description="" sid="400032075666382" title="Click" />
+        <event-block sid="921265116546196">
+            <conditions>
+                <condition id="6" name="On object clicked" sid="465133495454134" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">0</param>
+                    <param id="2" name="Object clicked">CraftingStation2</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="801351272780477" type="System">
+                    <param id="0" name="Variable">TabIsOpenBuildingSystem</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="560858737887272" type="System">
+                    <param id="0" name="Variable">WhatToPick</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-9" name="Set value" sid="332749938865735" type="System">
+                    <param id="0" name="Variable">Crafting</param>
+                    <param id="1" name="Value">&quot;Crafting Station&quot;</param>
+                </action>
+                <action id="-9" name="Set value" sid="584179535630136" type="System">
+                    <param id="0" name="Variable">WoodNeed</param>
+                    <param id="1" name="Value">&quot;25&quot;</param>
+                </action>
+                <action id="-15" name="Set visible" sid="247300463350316" type="Tab">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="555898792396218" type="BuildingAreYouSureText">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="2" name="Set visible" sid="156940682297237" type="BuildingAreYouSureButtons">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="3" name="Set enabled" sid="776503747083764" type="BuildingAreYouSureButtons">
+                    <param id="0" name="Mode">1</param>
+                </action>
+                <action id="0" name="Set text" sid="964595668247412" type="HowManyMaterials">
+                    <param id="0" name="Text">WoodNeed</param>
+                </action>
+                <action id="0" name="Set text" sid="381814211140465" type="WhatDoYouCraft">
+                    <param id="0" name="Text">Crafting</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="828366956553412">
+            <conditions>
+                <condition id="6" name="On object clicked" sid="906221015213660" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">0</param>
+                    <param id="2" name="Object clicked">Sapling</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="539264832217565" type="System">
+                    <param id="0" name="Variable">TabIsOpenBuildingSystem</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="678248905625098" type="System">
+                    <param id="0" name="Variable">WhatToPick</param>
+                    <param id="1" name="Value">2</param>
+                </action>
+                <action id="-9" name="Set value" sid="278537676737055" type="System">
+                    <param id="0" name="Variable">Crafting</param>
+                    <param id="1" name="Value">&quot;Sapling&quot;</param>
+                </action>
+                <action id="-9" name="Set value" sid="521747609663748" type="System">
+                    <param id="0" name="Variable">WoodNeed</param>
+                    <param id="1" name="Value">&quot;1&quot;</param>
+                </action>
+                <action id="-15" name="Set visible" sid="534507430168950" type="Tab">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="377734840123499" type="BuildingAreYouSureText">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="2" name="Set visible" sid="771025774734423" type="BuildingAreYouSureButtons">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="3" name="Set enabled" sid="965016487336777" type="BuildingAreYouSureButtons">
+                    <param id="0" name="Mode">1</param>
+                </action>
+                <action id="0" name="Set text" sid="382111902248470" type="HowManyMaterials">
+                    <param id="0" name="Text">WoodNeed</param>
+                </action>
+                <action id="0" name="Set text" sid="851461674237257" type="WhatDoYouCraft">
+                    <param id="0" name="Text">Crafting</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="885230075732281">
+            <conditions>
+                <condition id="6" name="On object clicked" sid="102966812577034" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">0</param>
+                    <param id="2" name="Object clicked">InventoryDetailer</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="300838286498805" type="System">
+                    <param id="0" name="Variable">TabIsOpenBuildingSystem</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="871619850020439" type="System">
+                    <param id="0" name="Variable">WhatToPick</param>
+                    <param id="1" name="Value">3</param>
+                </action>
+                <action id="-9" name="Set value" sid="731305345912693" type="System">
+                    <param id="0" name="Variable">Crafting</param>
+                    <param id="1" name="Value">&quot;Inventory Detail Expansion 1&quot;</param>
+                </action>
+                <action id="-9" name="Set value" sid="819433298102878" type="System">
+                    <param id="0" name="Variable">WoodNeed</param>
+                    <param id="1" name="Value">&quot;10&quot;</param>
+                </action>
+                <action id="-15" name="Set visible" sid="952581626731120" type="Tab">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="573082900678130" type="BuildingAreYouSureText">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="2" name="Set visible" sid="832830728025104" type="BuildingAreYouSureButtons">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="3" name="Set enabled" sid="753107298829537" type="BuildingAreYouSureButtons">
+                    <param id="0" name="Mode">1</param>
+                </action>
+                <action id="0" name="Set text" sid="651833575272173" type="HowManyMaterials">
+                    <param id="0" name="Text">&quot;10 Grass&quot;</param>
+                </action>
+                <action id="0" name="Set text" sid="131404547604157" type="WhatDoYouCraft">
+                    <param id="0" name="Text">Crafting</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="187517795082684">
+            <conditions>
+                <condition id="6" name="On object clicked" sid="160649824027128" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">0</param>
+                    <param id="2" name="Object clicked">Torch</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="768872627943086" type="System">
+                    <param id="0" name="Variable">TabIsOpenBuildingSystem</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="483698949593783" type="System">
+                    <param id="0" name="Variable">WhatToPick</param>
+                    <param id="1" name="Value">4</param>
+                </action>
+                <action id="-9" name="Set value" sid="643690760544029" type="System">
+                    <param id="0" name="Variable">Crafting</param>
+                    <param id="1" name="Value">&quot;Torch&quot;</param>
+                </action>
+                <action id="-9" name="Set value" sid="332583210370416" type="System">
+                    <param id="0" name="Variable">WoodNeed</param>
+                    <param id="1" name="Value">&quot;5&quot;</param>
+                </action>
+                <action id="-9" name="Set value" sid="895035328780165" type="System">
+                    <param id="0" name="Variable">GrassNeed</param>
+                    <param id="1" name="Value">&quot;3&quot;</param>
+                </action>
+                <action id="-15" name="Set visible" sid="726650157528816" type="Tab">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="499517513683928" type="BuildingAreYouSureText">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="2" name="Set visible" sid="842528284801759" type="BuildingAreYouSureButtons">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="3" name="Set enabled" sid="767690137648652" type="BuildingAreYouSureButtons">
+                    <param id="0" name="Mode">1</param>
+                </action>
+                <action id="0" name="Set text" sid="220549080804158" type="HowManyMaterials">
+                    <param id="0" name="Text">&quot;10 Grass, 5 Wood&quot;</param>
+                </action>
+                <action id="0" name="Set text" sid="413586326702881" type="WhatDoYouCraft">
+                    <param id="0" name="Text">Crafting</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="110434979198913">
+            <conditions>
+                <condition id="6" name="On object clicked" sid="787897242087386" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">0</param>
+                    <param id="2" name="Object clicked">BuildingTable</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="507932077149602" type="System">
+                    <param id="0" name="Variable">TabIsOpenBuildingSystem</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="578846738722650" type="System">
+                    <param id="0" name="Variable">WhatToPick</param>
+                    <param id="1" name="Value">5</param>
+                </action>
+                <action id="-9" name="Set value" sid="702348530595577" type="System">
+                    <param id="0" name="Variable">Crafting</param>
+                    <param id="1" name="Value">&quot;Building Table&quot;</param>
+                </action>
+                <action id="-9" name="Set value" sid="868160600830712" type="System">
+                    <param id="0" name="Variable">WoodNeed</param>
+                    <param id="1" name="Value">&quot;20&quot;</param>
+                </action>
+                <action id="-9" name="Set value" sid="793954001392327" type="System">
+                    <param id="0" name="Variable">GrassNeed</param>
+                    <param id="1" name="Value">&quot;30&quot;</param>
+                </action>
+                <action id="-15" name="Set visible" sid="462290120298697" type="Tab">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="834731624784861" type="BuildingAreYouSureText">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="2" name="Set visible" sid="552842254771807" type="BuildingAreYouSureButtons">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="3" name="Set enabled" sid="607092454998846" type="BuildingAreYouSureButtons">
+                    <param id="0" name="Mode">1</param>
+                </action>
+                <action id="0" name="Set text" sid="835062982882993" type="HowManyMaterials">
+                    <param id="0" name="Text">&quot;20 Woods, 30 Grass&quot;</param>
+                </action>
+                <action id="0" name="Set text" sid="815902141337951" type="WhatDoYouCraft">
+                    <param id="0" name="Text">Crafting</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-group description="" sid="398005894382460" title="DataHandler" />
+        <event-block sid="910890645007935">
+            <conditions>
+                <condition id="0" name="On clicked" sid="878667180371200" type="Yes" />
+                <condition id="-14" name="Compare variable" sid="483268707382285" type="System">
+                    <param id="0" name="Variable">WoodNeed</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">Wood</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="661050928474892" type="System">
+                    <param id="0" name="Variable">WhatToPick</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-11" name="Subtract from" sid="580818571696800" type="System">
+                    <param id="0" name="Variable">Wood</param>
+                    <param id="1" name="Value">WoodNeed</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="420114851329835" type="FirstPlayer">
+                    <param id="0" name="Object">CraftingStation</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="2" name="Set visible" sid="754795454533226" type="BuildingAreYouSureButtons">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="531639490219465" type="BuildingAreYouSureText">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="494096088209707" type="BuildingTab">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="516231832946397" type="Brown">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="444338266368225" type="System">
+                    <param id="0" name="Variable">WhatToPick</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="581929458893101">
+            <conditions>
+                <condition id="0" name="On clicked" sid="560487504336014" type="Yes" />
+                <condition id="-14" name="Compare variable" sid="639432107597913" type="System">
+                    <param id="0" name="Variable">WoodNeed</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">Wood</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="704770662111411" type="System">
+                    <param id="0" name="Variable">WhatToPick</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">2</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-11" name="Subtract from" sid="143208238123143" type="System">
+                    <param id="0" name="Variable">Wood</param>
+                    <param id="1" name="Value">WoodNeed</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="268744072680947" type="FirstPlayer">
+                    <param id="0" name="Object">Sapling2</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="2" name="Set visible" sid="704260357990694" type="BuildingAreYouSureButtons">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="669368535780430" type="BuildingAreYouSureText">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="790057385740537" type="BuildingTab">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="150689416494089" type="Brown">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="690207790953248" type="System">
+                    <param id="0" name="Variable">WhatToPick</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="862470223897612">
+            <conditions>
+                <condition id="0" name="On clicked" sid="959717584112026" type="Yes" />
+                <condition id="-14" name="Compare variable" sid="647699075896603" type="System">
+                    <param id="0" name="Variable">WoodNeed</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">Grass</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="816031956058967" type="System">
+                    <param id="0" name="Variable">WhatToPick</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">3</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-11" name="Subtract from" sid="902454494423198" type="System">
+                    <param id="0" name="Variable">Grass</param>
+                    <param id="1" name="Value">10</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="786016461541200" type="FirstPlayer">
+                    <param id="0" name="Object">InventoryDetailer2</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="2" name="Set visible" sid="458078320252273" type="BuildingAreYouSureButtons">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="760608901848176" type="BuildingAreYouSureText">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="551599369383428" type="BuildingTab">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="860312870338820" type="Brown">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="286797924245147" type="System">
+                    <param id="0" name="Variable">WhatToPick</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="222365016747675">
+            <conditions>
+                <condition id="0" name="On clicked" sid="554041469964183" type="Yes" />
+                <condition id="-14" name="Compare variable" sid="819967006698674" type="System">
+                    <param id="0" name="Variable">WoodNeed</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">Wood</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="701088661528972" type="System">
+                    <param id="0" name="Variable">GrassNeed</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">Grass</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="807164046385802" type="System">
+                    <param id="0" name="Variable">WhatToPick</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">4</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-11" name="Subtract from" sid="693027511157093" type="System">
+                    <param id="0" name="Variable">Grass</param>
+                    <param id="1" name="Value">3</param>
+                </action>
+                <action id="-11" name="Subtract from" sid="671265840727454" type="System">
+                    <param id="0" name="Variable">Wood</param>
+                    <param id="1" name="Value">5</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="100673576386490" type="FirstPlayer">
+                    <param id="0" name="Object">Torch2</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="2" name="Set visible" sid="329947300817603" type="BuildingAreYouSureButtons">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="512443497532381" type="BuildingAreYouSureText">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="897698996012460" type="BuildingTab">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="321763765054502" type="Brown">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="796112147191350" type="System">
+                    <param id="0" name="Variable">WhatToPick</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="541891312917966">
+            <conditions>
+                <condition id="0" name="On clicked" sid="740030404254768" type="Yes" />
+                <condition id="-14" name="Compare variable" sid="773555355291976" type="System">
+                    <param id="0" name="Variable">WoodNeed</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">Wood</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="567004776858084" type="System">
+                    <param id="0" name="Variable">GrassNeed</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">Grass</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="917264318504351" type="System">
+                    <param id="0" name="Variable">WhatToPick</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">5</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-11" name="Subtract from" sid="542975913529001" type="System">
+                    <param id="0" name="Variable">Grass</param>
+                    <param id="1" name="Value">30</param>
+                </action>
+                <action id="-11" name="Subtract from" sid="203015578128305" type="System">
+                    <param id="0" name="Variable">Wood</param>
+                    <param id="1" name="Value">20</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="250840779452102" type="FirstPlayer">
+                    <param id="0" name="Object">BuildingTable2</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="2" name="Set visible" sid="762465393691459" type="BuildingAreYouSureButtons">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="763678090357210" type="BuildingAreYouSureText">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="193625193357209" type="BuildingTab">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="342843144730899" type="Brown">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="833442460337174" type="System">
+                    <param id="0" name="Variable">WhatToPick</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

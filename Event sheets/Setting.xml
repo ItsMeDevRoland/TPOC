@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Setting</name>
+    <events>
+        <event-block sid="822779805137218">
+            <conditions>
+                <condition id="1" name="Is checked" sid="906558016578870" type="AllowMusic" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="146480976543243" type="System">
+                    <param id="0" name="Variable">CloseEveryMusic</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="373859680791432">
+            <conditions>
+                <condition id="1" inverted="1" name="Is checked" sid="421391789611842" type="AllowMusic" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="403563497026521" type="System">
+                    <param id="0" name="Variable">CloseEveryMusic</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="433705659126858">
+            <conditions>
+                <condition id="1" name="Is checked" sid="921087582859431" type="UnLoadAudio" />
+            </conditions>
+            <actions>
+                <action id="37" name="Unload all audio" sid="155337711714595" type="Audio" />
+            </actions>
+        </event-block>
+        <event-block sid="732562654227390">
+            <conditions>
+                <condition id="1" inverted="1" name="Is checked" sid="687317926317703" type="UnLoadAudio" />
+            </conditions>
+            <actions>
+                <action id="4" name="Preload" sid="645621461562693" type="Audio">
+                    <param id="0" name="Audio file">SadSong</param>
+                </action>
+                <action id="4" name="Preload" sid="192780160918857" type="Audio">
+                    <param id="0" name="Audio file">melancholy-sad-piano-music-3802</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="293834494337262">
+            <conditions>
+                <condition id="1" name="Is checked" sid="644974753640878" type="HighResolution" />
+            </conditions>
+            <actions>
+                <action id="-40" name="Set fullscreen scaling" sid="634214755936016" type="System">
+                    <param id="0" name="Fullscreen scaling">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="763385068503159">
+            <conditions>
+                <condition id="1" inverted="1" name="Is checked" sid="432594213640822" type="HighResolution" />
+            </conditions>
+            <actions>
+                <action id="-40" name="Set fullscreen scaling" sid="849535153827920" type="System">
+                    <param id="0" name="Fullscreen scaling">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="133939123515788">
+            <conditions>
+                <condition id="1" name="Is checked" sid="848031627788039" type="Fullscreen" />
+            </conditions>
+            <actions>
+                <action id="10" name="Request fullscreen" sid="391738830268501" type="Browser">
+                    <param id="0" name="Mode">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="586444842686717">
+            <conditions>
+                <condition id="1" inverted="1" name="Is checked" sid="210781441709191" type="Fullscreen" />
+            </conditions>
+            <actions>
+                <action id="11" name="Cancel fullscreen" sid="764594060142253" type="Browser" />
+            </actions>
+        </event-block>
+        <event-block sid="444611804744670">
+            <conditions>
+                <condition id="0" name="On clicked" sid="381821007834672" type="BackToMainMenuInSetting" />
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="560023294750797" type="System">
+                    <param id="0" name="Layout">Menu</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="781277165752523">
+            <conditions>
+                <condition id="1" name="Is checked" sid="663583727676297" type="AllowBackupFor5Seconds" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="429394281663784" type="System">
+                    <param id="0" name="Variable">AllowBackupFor5Sec</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="534589116528416">
+            <conditions>
+                <condition id="1" inverted="1" name="Is checked" sid="446341674292681" type="AllowBackupFor5Seconds" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="135539159432320" type="System">
+                    <param id="0" name="Variable">AllowBackupFor5Sec</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>
