@@ -16,3 +16,6 @@ Im Pretty Sure there Is No Way... As Construct 2 Is Needed, And For Sure You Nee
 Sooo.. I Really Can't Smuggle Some License To Ya'll As That is Illegal.... But You Can Try C2G Or Something *USE IT ON YOUR OWN RISK*
 # How Do I Post My Modified Version Of TPOC
 Well... Create A Branch And Start A Pull Request
+# My TODO'S
+Add More Folder's Containing More Stuff To Modify Incase You Found Bugs Or You Just Don't like It
+And Also Reorganized Stuff
